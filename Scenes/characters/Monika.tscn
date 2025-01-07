@@ -1,0 +1,452 @@
+[gd_scene load_steps=67 format=3 uid="uid://bjt8r4emkrpdo"]
+
+[ext_resource type="Texture2D" uid="uid://dj7f2wt8eclv4" path="res://Assets/Textures/Character/m_sticker_1.png" id="1_o4eai"]
+[ext_resource type="Script" path="res://Scripts/UI/Monika_penetrating.cs" id="1_so8ya"]
+[ext_resource type="Script" path="res://Scripts/characters/Movements.cs" id="3_a6jva"]
+[ext_resource type="Script" path="res://ai/tasks/direction_left.cs" id="4_krvsg"]
+[ext_resource type="Texture2D" uid="uid://bhhrjpr511x61" path="res://Assets/Textures/Character/m_sticker_2.png" id="4_uwjln"]
+[ext_resource type="Script" path="res://ai/tasks/direction_change.cs" id="5_qla25"]
+[ext_resource type="Script" path="res://Scripts/characters/MouseMove.cs" id="5_yn1n7"]
+
+[sub_resource type="Animation" id="Animation_4ti7m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(505, 348, 521, 287, 559, 266, 641, 291, 639, 344, 637, 426, 589, 454, 525, 452)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_o4eai")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("movements:character_direction")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_2u3uh"]
+resource_name = "left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gqt0v"]
+resource_name = "right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bk1nu"]
+resource_name = "recovery"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Polygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(505, 348, 521, 287, 559, 266, 641, 291, 639, 344, 637, 426, 589, 454, 525, 452)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_o4eai")]
+}
+
+[sub_resource type="Animation" id="Animation_kxq0x"]
+resource_name = "grab"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_uwjln")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.174533, 0.0, -0.174533, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Polygon2D:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(417, 269, 514, 264, 559, 266, 725, 264, 728, 366, 726, 457, 585, 460, 416, 457)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("movements:character_direction")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rboqg"]
+_data = {
+"RESET": SubResource("Animation_4ti7m"),
+"grab": SubResource("Animation_kxq0x"),
+"left": SubResource("Animation_2u3uh"),
+"recovery": SubResource("Animation_bk1nu"),
+"right": SubResource("Animation_gqt0v")
+}
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_eywtt"]
+
+[sub_resource type="BTAction" id="BTAction_yxm73"]
+script = ExtResource("4_krvsg")
+
+[sub_resource type="BBNode" id="BBNode_tbvla"]
+resource_name = "AnimationPlayer"
+saved_value = NodePath("AnimationPlayer")
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_aom1p"]
+animation_player = SubResource("BBNode_tbvla")
+animation_name = &"right"
+
+[sub_resource type="BTProbability" id="BTProbability_c5n56"]
+children = [SubResource("BTPlayAnimation_aom1p")]
+run_chance = 0.3
+
+[sub_resource type="BTAction" id="BTAction_hau8i"]
+script = ExtResource("5_qla25")
+
+[sub_resource type="BTWait" id="BTWait_f0xq2"]
+
+[sub_resource type="BTAction" id="BTAction_316k0"]
+script = ExtResource("4_krvsg")
+
+[sub_resource type="BTWait" id="BTWait_oqwi8"]
+duration = 0.5
+
+[sub_resource type="BBNode" id="BBNode_ngt2n"]
+resource_name = "movements"
+saved_value = NodePath("movements")
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_0jec3"]
+node = SubResource("BBNode_ngt2n")
+method = &"jump_right"
+
+[sub_resource type="BTFail" id="BTFail_17vb8"]
+
+[sub_resource type="BTComment" id="BTComment_eu28c"]
+custom_name = "如果方向为左，百分之三十变右.1秒后向右跳动"
+
+[sub_resource type="BTSequence" id="BTSequence_ytf4d"]
+custom_name = "direction_change"
+children = [SubResource("BTAction_yxm73"), SubResource("BTProbability_c5n56"), SubResource("BTAction_hau8i"), SubResource("BTWait_f0xq2"), SubResource("BTAction_316k0"), SubResource("BTWait_oqwi8"), SubResource("BTCallMethod_0jec3"), SubResource("BTFail_17vb8"), SubResource("BTComment_eu28c")]
+
+[sub_resource type="BTAction" id="BTAction_e2tls"]
+script = ExtResource("4_krvsg")
+
+[sub_resource type="BTInvert" id="BTInvert_4uisn"]
+children = [SubResource("BTAction_e2tls")]
+
+[sub_resource type="BBNode" id="BBNode_o2odv"]
+resource_name = "AnimationPlayer"
+saved_value = NodePath("AnimationPlayer")
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_qwcyf"]
+animation_player = SubResource("BBNode_o2odv")
+animation_name = &"left"
+
+[sub_resource type="BTProbability" id="BTProbability_va5ac"]
+children = [SubResource("BTPlayAnimation_qwcyf")]
+run_chance = 0.3
+
+[sub_resource type="BTAction" id="BTAction_fgyuk"]
+script = ExtResource("5_qla25")
+
+[sub_resource type="BTWait" id="BTWait_1e5i0"]
+
+[sub_resource type="BTAction" id="BTAction_vxpqb"]
+script = ExtResource("4_krvsg")
+
+[sub_resource type="BTInvert" id="BTInvert_8cnht"]
+children = [SubResource("BTAction_vxpqb")]
+
+[sub_resource type="BBNode" id="BBNode_tsau6"]
+resource_name = "movements"
+saved_value = NodePath("movements")
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_4wbq2"]
+node = SubResource("BBNode_tsau6")
+method = &"jump_left"
+
+[sub_resource type="BTFail" id="BTFail_8pwr0"]
+
+[sub_resource type="BTComment" id="BTComment_jeu5t"]
+custom_name = "如果方向为右，百分之三十变左.1秒后向左跳动"
+
+[sub_resource type="BTSequence" id="BTSequence_68ken"]
+custom_name = "direction_change"
+children = [SubResource("BTInvert_4uisn"), SubResource("BTProbability_va5ac"), SubResource("BTAction_fgyuk"), SubResource("BTWait_1e5i0"), SubResource("BTInvert_8cnht"), SubResource("BTCallMethod_4wbq2"), SubResource("BTFail_8pwr0"), SubResource("BTComment_jeu5t")]
+
+[sub_resource type="BTWait" id="BTWait_fso6o"]
+
+[sub_resource type="BTProbability" id="BTProbability_fypac"]
+children = [SubResource("BTWait_fso6o")]
+run_chance = 0.3
+
+[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_lt0qk"]
+children = [SubResource("BTProbability_fypac")]
+
+[sub_resource type="BTFail" id="BTFail_u2vpv"]
+
+[sub_resource type="BTComment" id="BTComment_ivsa3"]
+custom_name = "概率等待"
+
+[sub_resource type="BTSequence" id="BTSequence_5wprm"]
+custom_name = "Standby"
+children = [SubResource("BTAlwaysSucceed_lt0qk"), SubResource("BTFail_u2vpv"), SubResource("BTComment_ivsa3")]
+
+[sub_resource type="BTAction" id="BTAction_3fhtj"]
+script = ExtResource("4_krvsg")
+
+[sub_resource type="BBNode" id="BBNode_1ill0"]
+resource_name = "movements"
+saved_value = NodePath("movements")
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_sfvcr"]
+node = SubResource("BBNode_1ill0")
+method = &"jump_left"
+
+[sub_resource type="BTProbability" id="BTProbability_xrg14"]
+children = [SubResource("BTCallMethod_sfvcr")]
+run_chance = 0.7
+
+[sub_resource type="BTFail" id="BTFail_b0ff6"]
+
+[sub_resource type="BTComment" id="BTComment_vf188"]
+custom_name = "如果方向为左，百分之五十向左跳跃"
+
+[sub_resource type="BTSequence" id="BTSequence_vuvjq"]
+custom_name = "jump_left"
+children = [SubResource("BTAction_3fhtj"), SubResource("BTProbability_xrg14"), SubResource("BTFail_b0ff6"), SubResource("BTComment_vf188")]
+
+[sub_resource type="BTAction" id="BTAction_ir0cg"]
+script = ExtResource("4_krvsg")
+
+[sub_resource type="BTInvert" id="BTInvert_o8a2m"]
+children = [SubResource("BTAction_ir0cg")]
+
+[sub_resource type="BBNode" id="BBNode_r8608"]
+resource_name = "movements"
+saved_value = NodePath("movements")
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_12gpf"]
+node = SubResource("BBNode_r8608")
+method = &"jump_right"
+
+[sub_resource type="BTProbability" id="BTProbability_i7624"]
+children = [SubResource("BTCallMethod_12gpf")]
+run_chance = 0.7
+
+[sub_resource type="BTFail" id="BTFail_kqgtw"]
+
+[sub_resource type="BTComment" id="BTComment_40nxa"]
+custom_name = "如果方向为右，百分之五十向右跳跃"
+
+[sub_resource type="BTSequence" id="BTSequence_e6ye3"]
+custom_name = "jump_right"
+children = [SubResource("BTInvert_o8a2m"), SubResource("BTProbability_i7624"), SubResource("BTFail_kqgtw"), SubResource("BTComment_40nxa")]
+
+[sub_resource type="BTWait" id="BTWait_0ip8y"]
+
+[sub_resource type="BTSelector" id="BTSelector_4p4bu"]
+children = [SubResource("BTSequence_ytf4d"), SubResource("BTSequence_68ken"), SubResource("BTSequence_5wprm"), SubResource("BTSequence_vuvjq"), SubResource("BTSequence_e6ye3"), SubResource("BTWait_0ip8y")]
+
+[sub_resource type="BehaviorTree" id="BehaviorTree_m3r61"]
+blackboard_plan = SubResource("BlackboardPlan_eywtt")
+root_task = SubResource("BTSelector_4p4bu")
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_pct0h"]
+
+[node name="Monika" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_so8ya")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -42.0
+offset_right = 60.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(59, 43.53)
+focus_mode = 2
+texture = ExtResource("1_o4eai")
+
+[node name="movements" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_a6jva")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(505, 348, 521, 287, 559, 266, 641, 291, 639, 344, 637, 426, 589, 454, 525, 452)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rboqg")
+}
+
+[node name="mouse_move" type="Node2D" parent="."]
+script = ExtResource("5_yn1n7")
+
+[node name="Character_jump" type="BTPlayer" parent="."]
+behavior_tree = SubResource("BehaviorTree_m3r61")
+blackboard_plan = SubResource("BlackboardPlan_pct0h")
+
+[connection signal="focus_entered" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_entered"]
+[connection signal="focus_exited" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_exited"]

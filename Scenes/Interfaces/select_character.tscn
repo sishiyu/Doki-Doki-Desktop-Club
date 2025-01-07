@@ -1,0 +1,633 @@
+[gd_scene load_steps=40 format=3 uid="uid://bvuu4wkaehhgt"]
+
+[ext_resource type="Script" path="res://Scripts/UI/SelectCharacter_penetrating.cs" id="1_jnx1n"]
+[ext_resource type="Texture2D" uid="uid://s7340f0igf32" path="res://Assets/Textures/UI/background.png" id="1_ngycf"]
+[ext_resource type="Texture2D" uid="uid://dgvdqj7lrtqne" path="res://Assets/Textures/UI/logo.png" id="2_ig3gf"]
+[ext_resource type="Texture2D" uid="uid://bs7c7ht1qr80w" path="res://Assets/Textures/Character/s_sticker_1.png" id="3_q0cvf"]
+[ext_resource type="Texture2D" uid="uid://dj7f2wt8eclv4" path="res://Assets/Textures/Character/m_sticker_1.png" id="4_nqxrs"]
+[ext_resource type="Script" path="res://Scripts/UI/Sayori_Texture.cs" id="5_8ujo1"]
+[ext_resource type="Texture2D" uid="uid://bwjeap5tcl01q" path="res://Assets/Textures/Character/y_sticker_1.png" id="5_u243o"]
+[ext_resource type="Texture2D" uid="uid://cfjg3s6uh88s1" path="res://Assets/Textures/Character/n_sticker_1.png" id="6_2v23m"]
+[ext_resource type="Script" path="res://Scripts/UI/Monika_Textures.cs" id="7_wdba1"]
+[ext_resource type="FontFile" uid="uid://cthr3uqcbw32p" path="res://Assets/Fonts/Aller_Rg.ttf" id="8_n2snk"]
+[ext_resource type="Texture2D" uid="uid://bhif5hxt10hhb" path="res://Assets/Textures/Character/n_sticker_2.png" id="9_8xm2y"]
+[ext_resource type="Script" path="res://Scripts/UI/Natsuki_Texture.cs" id="9_d7bqi"]
+[ext_resource type="Texture2D" uid="uid://bhhrjpr511x61" path="res://Assets/Textures/Character/m_sticker_2.png" id="10_s87fu"]
+[ext_resource type="Script" path="res://Scripts/UI/Yuri_Texture.cs" id="11_br65u"]
+[ext_resource type="Texture2D" uid="uid://dqvgghwh2cn35" path="res://Assets/Textures/Character/s_sticker_2.png" id="11_dfk8q"]
+[ext_resource type="Texture2D" uid="uid://0o5iy1dca014" path="res://Assets/Textures/Character/y_sticker_2.png" id="12_hi3au"]
+[ext_resource type="Script" path="res://Scripts/UI/Trig.cs" id="14_kspkp"]
+[ext_resource type="AudioStream" uid="uid://mw2wax3i1wh3" path="res://Assets/Audios/UI/choose.ogg" id="17_clnpg"]
+[ext_resource type="AudioStream" uid="uid://dpg8d0m10yhdy" path="res://Assets/Audios/BGM/start.ogg" id="17_xdsjq"]
+[ext_resource type="AudioStream" uid="uid://ddklynu8dx24o" path="res://Assets/Audios/UI/click.ogg" id="18_pge5x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v6bh2"]
+
+[sub_resource type="Animation" id="Animation_p186f"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_fx0d0"]
+resource_name = "choose"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_dfk8q")]
+}
+
+[sub_resource type="Animation" id="Animation_587cg"]
+resource_name = "recover"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_q0cvf")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d2mb8"]
+_data = {
+"RESET": SubResource("Animation_p186f"),
+"choose": SubResource("Animation_fx0d0"),
+"recover": SubResource("Animation_587cg")
+}
+
+[sub_resource type="Animation" id="Animation_mgxdj"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_langs"]
+resource_name = "choose"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_s87fu")]
+}
+
+[sub_resource type="Animation" id="Animation_h27th"]
+resource_name = "recover"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_nqxrs")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hgkep"]
+_data = {
+"RESET": SubResource("Animation_mgxdj"),
+"choose": SubResource("Animation_langs"),
+"recover": SubResource("Animation_h27th")
+}
+
+[sub_resource type="Animation" id="Animation_mio56"]
+resource_name = "choose"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_8xm2y")]
+}
+
+[sub_resource type="Animation" id="Animation_ekmr4"]
+resource_name = "recover"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_2v23m")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0aj0r"]
+_data = {
+"choose": SubResource("Animation_mio56"),
+"recover": SubResource("Animation_ekmr4")
+}
+
+[sub_resource type="Animation" id="Animation_ybety"]
+resource_name = "choose"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_hi3au")]
+}
+
+[sub_resource type="Animation" id="Animation_ttf8h"]
+resource_name = "recover"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_u243o")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ffqo0"]
+_data = {
+"choose": SubResource("Animation_ybety"),
+"recover": SubResource("Animation_ttf8h")
+}
+
+[sub_resource type="Animation" id="Animation_y2ypj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("statement:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("start:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("character:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(324, 439)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("long:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(320, -158)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("character/Natsuki:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_2v23m")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("character/Monika:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_nqxrs")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("character/Sayori:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_q0cvf")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("character/Yuri:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_u243o")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("start_bgm:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xupcx"]
+resource_name = "start"
+length = 140.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("statement:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.56667, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("start:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(6.53333, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("character:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(7, 7.8, 7.93333, 8.2, 8.3, 8.43333, 8.53333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(324, 439), Vector2(324, 317), Vector2(324, 317), Vector2(324, 300), Vector2(324, 317), Vector2(324, 300), Vector2(324, 317)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("long:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(7.5, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(320, -158), Vector2(320, 11)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("character/Natsuki:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(7.8, 8, 8.53333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_2v23m"), ExtResource("9_8xm2y"), ExtResource("6_2v23m")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("character/Monika:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(7.8, 8, 8.53333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_nqxrs"), ExtResource("10_s87fu"), ExtResource("4_nqxrs")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("character/Sayori:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(7.8, 8, 8.53333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_q0cvf"), ExtResource("11_dfk8q"), ExtResource("3_q0cvf")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("character/Yuri:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(7.8, 8, 8.53333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_u243o"), ExtResource("12_hi3au"), ExtResource("5_u243o")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("start_bgm:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_run2q"]
+_data = {
+"RESET": SubResource("Animation_y2ypj"),
+"start": SubResource("Animation_xupcx")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yujup"]
+
+[node name="Select_Character" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jnx1n")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -684.0
+offset_top = -660.0
+offset_right = 696.0
+offset_bottom = 660.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.225253, 0.225253)
+pivot_offset = Vector2(690, 660)
+texture = ExtResource("1_ngycf")
+
+[node name="long" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -482.0
+offset_right = 256.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.286408, 0.286408)
+pivot_offset = Vector2(256, 256)
+texture = ExtResource("2_ig3gf")
+
+[node name="character" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = 115.0
+offset_right = 254.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.515667, 0.515667)
+pivot_offset = Vector2(253, 86)
+
+[node name="Sayori" type="TextureRect" parent="character"]
+layout_mode = 2
+texture = ExtResource("3_q0cvf")
+script = ExtResource("5_8ujo1")
+
+[node name="Area2D" type="Area2D" parent="character/Sayori"]
+position = Vector2(61.0156, 91.8177)
+scale = Vector2(4.88689, 5.53844)
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="character/Sayori/Area2D"]
+shape = SubResource("CapsuleShape2D_v6bh2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="character/Sayori"]
+libraries = {
+"": SubResource("AnimationLibrary_d2mb8")
+}
+
+[node name="Monika" type="TextureRect" parent="character"]
+layout_mode = 2
+texture = ExtResource("4_nqxrs")
+script = ExtResource("7_wdba1")
+
+[node name="Area2D" type="Area2D" parent="character/Monika"]
+position = Vector2(61.0659, 91.8177)
+scale = Vector2(5.48566, 5.73875)
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="character/Monika/Area2D"]
+shape = SubResource("CapsuleShape2D_v6bh2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="character/Monika"]
+libraries = {
+"": SubResource("AnimationLibrary_hgkep")
+}
+
+[node name="Natsuki" type="TextureRect" parent="character"]
+layout_mode = 2
+texture = ExtResource("6_2v23m")
+script = ExtResource("9_d7bqi")
+
+[node name="Area2D" type="Area2D" parent="character/Natsuki"]
+position = Vector2(66.0555, 87.9392)
+scale = Vector2(5.44827, 5.63431)
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="character/Natsuki/Area2D"]
+shape = SubResource("CapsuleShape2D_v6bh2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="character/Natsuki"]
+libraries = {
+"": SubResource("AnimationLibrary_0aj0r")
+}
+
+[node name="Yuri" type="TextureRect" parent="character"]
+layout_mode = 2
+texture = ExtResource("5_u243o")
+script = ExtResource("11_br65u")
+
+[node name="Area2D" type="Area2D" parent="character/Yuri"]
+position = Vector2(52.9236, 91.8177)
+scale = Vector2(5.04881, 6.10988)
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="character/Yuri/Area2D"]
+shape = SubResource("CapsuleShape2D_v6bh2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="character/Yuri"]
+libraries = {
+"": SubResource("AnimationLibrary_ffqo0")
+}
+
+[node name="start" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7.81494, 7.81494)
+pivot_offset = Vector2(20, 20)
+
+[node name="statement" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.858534, 0.858534)
+pivot_offset = Vector2(80, 22)
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("8_n2snk")
+text = "
+同人作品，严禁牟利！"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_run2q")
+}
+
+[node name="start_bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_xdsjq")
+
+[node name="UI_choose_Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_clnpg")
+volume_db = -5.0
+
+[node name="UI_click_Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_pge5x")
+volume_db = -5.0
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(712, 193, 712, 454, 437, 454, 437, 193)
+
+[node name="trig" type="Area2D" parent="."]
+scale = Vector2(0.79606, 0.79606)
+collision_layer = 512
+collision_mask = 512
+script = ExtResource("14_kspkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trig"]
+scale = Vector2(0.589931, 0.589931)
+shape = SubResource("CircleShape2D_yujup")
+
+[connection signal="area_entered" from="character/Sayori/Area2D" to="character/Sayori" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="character/Sayori/Area2D" to="character/Sayori" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="character/Monika/Area2D" to="character/Monika" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="character/Monika/Area2D" to="character/Monika" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="character/Natsuki/Area2D" to="character/Natsuki" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="character/Natsuki/Area2D" to="character/Natsuki" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="character/Yuri/Area2D" to="character/Yuri" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="character/Yuri/Area2D" to="character/Yuri" method="_on_area_2d_area_exited"]
