@@ -9,7 +9,7 @@ func _ready() -> void:
 	var layout = Dialogic.start("Monika_Greeting")#播放问候对话
 	layout.register_character("res://Dialogic/Characters/Monika_Mini.dch",$"../Bubble_Position")#设置对话位置
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if(Speak):
 		penetration_position.play("Speak")#更改穿透位置
 

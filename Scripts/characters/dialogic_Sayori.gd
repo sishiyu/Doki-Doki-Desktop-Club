@@ -13,7 +13,7 @@ func _ready() -> void:
 	
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if(Speak):
 		penetration_position.play("Speak")#更改穿透位置
 

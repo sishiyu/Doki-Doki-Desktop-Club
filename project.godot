@@ -31,11 +31,13 @@ directories/dch_directory={
 "Monika_Mini": "res://Dialogic/Characters/Monika_Mini.dch",
 "Natsuki_Mini": "res://Dialogic/Characters/Natsuki_Mini.dch",
 "Sayori_Mini": "res://Dialogic/Characters/Sayori_Mini.dch",
+"System": "res://Dialogic/Characters/System.dch",
 "Yuri_Mini": "res://Dialogic/Characters/Yuri_Mini.dch"
 }
 directories/dtl_directory={
 "Monika_Greeting": "res://Dialogic/Timelines/Monika/Monika_Greeting.dtl",
 "Natsuki_Greeting": "res://Dialogic/Timelines/Natsuki/Natsuki_Greeting.dtl",
+"Player_Name": "res://Dialogic/Timelines/System/Player_Name.dtl",
 "Sayori_Greeting": "res://Dialogic/Timelines/Sayouri/Sayori_Greeting.dtl",
 "Yuri_Greeting": "res://Dialogic/Timelines/Yuri/Yuri_Greeting.dtl"
 }
@@ -43,8 +45,8 @@ glossary/default_case_sensitive=true
 variables={
 "PlayerName": "Player"
 }
-layout/style_list=["res://Dialogic/Styles/Sayouri_Mini_Styles.tres", "res://Dialogic/Styles/Monika_Mini_Styles.tres", "res://Dialogic/Styles/Natsuki_Mini_Styles.tres", "res://Dialogic/Styles/Yuri_Mini_Styles.tres"]
-layout/default_style="res://Dialogic/Styles/Yuri_Mini_Styles.tres"
+layout/style_list=["res://Dialogic/Styles/Sayouri_Mini_Styles.tres", "res://Dialogic/Styles/Monika_Mini_Styles.tres", "res://Dialogic/Styles/Natsuki_Mini_Styles.tres", "res://Dialogic/Styles/Yuri_Mini_Styles.tres", "res://Dialogic/Styles/System_Bubble.tres"]
+layout/default_style="res://Dialogic/Styles/Sayouri_Mini_Styles.tres"
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.1
 text/initial_text_reveal_skippable=true
@@ -78,6 +80,7 @@ text/autoadvance_ignored_characters={
 "？": null
 }
 audio/type_sound_bus="Dialogic"
+text/autocolor_names=false
 
 [display]
 
