@@ -49,7 +49,6 @@ max_length = 6
 expand_to_text_length = true
 select_all_on_focus = true
 caret_blink = true
-caret_force_displayed = true
 
 [node name="Bubble_Position" type="Marker2D" parent="."]
 position = Vector2(601, 304)
@@ -76,6 +75,6 @@ script = ExtResource("3_c1u04")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(257, 132, 892, 126, 896, 402, 256, 400)
+polygon = PackedVector2Array(254, 112, 893, 112, 896, 402, 256, 400)
 
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

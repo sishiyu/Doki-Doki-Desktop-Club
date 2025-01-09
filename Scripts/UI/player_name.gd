@@ -11,8 +11,6 @@ func _ready() -> void:
 	
 
 
-
-func _physics_process(_delta: float) -> void:
-	if(button.get("player_name_exist")):#如果玩家有名字
-		Dialogic.end_timeline()#停止时间线
-	
+func End_timeLine():
+	Dialogic.paused = true#停止时间线
+	Dialogic.Text.hide_textbox()#隐藏对话框

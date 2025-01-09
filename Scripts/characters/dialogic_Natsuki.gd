@@ -6,6 +6,8 @@ var Speak:bool#是否在说话
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Dialogic.signal_event.connect(on_Dialogic_signal)
+	Dialogic.Text.show_textbox()#显示对话框
+	
 	var layout = Dialogic.start("Natsuki_Greeting")#播放问候对话
 	layout.register_character("res://Dialogic/Characters/Natsuki_Mini.dch",$"../Bubble_Position")#设置对话位置
 

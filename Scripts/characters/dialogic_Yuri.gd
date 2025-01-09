@@ -7,6 +7,8 @@ var Speak:bool#是否在说话
 
 func _ready() -> void:
 	Dialogic.signal_event.connect(on_Dialogic_signal)
+	Dialogic.Text.show_textbox()#显示对话框
+	
 	var layout = Dialogic.start("Yuri_Greeting")#播放问候对话
 	layout.register_character("res://Dialogic/Characters/Yuri_Mini.dch",$"../Bubble_Position")#设置对话位置
 
