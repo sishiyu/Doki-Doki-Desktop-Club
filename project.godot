@@ -14,16 +14,70 @@ config/name="Doki Doki Desktop Club"
 run/main_scene="res://Scenes/Interfaces/select_character.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 boot_splash/bg_color=Color(1, 1, 1, 0)
-boot_splash/image="res://Assets/Textures/UI/logo.png"
-boot_splash/fullsize=false
+boot_splash/image="res://Long.png"
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="res://Long.png"
 boot_splash/minimum_display_time=100
 
 [autoload]
 
 Signal_Debugger="*res://addons/SignalVisualizer/Debugger/SignalDebugger.gd"
 RuntimeDebugTools="*res://addons/runtime_debug_tools/scenes/remote_inspector.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+
+[dialogic]
+
+directories/dch_directory={
+"Monika_Mini": "res://Dialogic/Characters/Monika_Mini.dch",
+"Natsuki_Mini": "res://Dialogic/Characters/Natsuki_Mini.dch",
+"Sayori_Mini": "res://Dialogic/Characters/Sayori_Mini.dch",
+"Yuri_Mini": "res://Dialogic/Characters/Yuri_Mini.dch"
+}
+directories/dtl_directory={
+"Monika_Greeting": "res://Dialogic/Timelines/Monika/Monika_Greeting.dtl",
+"Natsuki_Greeting": "res://Dialogic/Timelines/Natsuki/Natsuki_Greeting.dtl",
+"Sayori_Greeting": "res://Dialogic/Timelines/Sayouri/Sayori_Greeting.dtl",
+"Yuri_Greeting": "res://Dialogic/Timelines/Yuri/Yuri_Greeting.dtl"
+}
+glossary/default_case_sensitive=true
+variables={
+"PlayerName": "Player"
+}
+layout/style_list=["res://Dialogic/Styles/Sayouri_Mini_Styles.tres", "res://Dialogic/Styles/Monika_Mini_Styles.tres", "res://Dialogic/Styles/Natsuki_Mini_Styles.tres", "res://Dialogic/Styles/Yuri_Mini_Styles.tres"]
+layout/default_style="res://Dialogic/Styles/Yuri_Mini_Styles.tres"
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.1
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.2
+text/autoadvance_ignored_characters_enabled=true
+audio/max_channels=4.0
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={
+"。.？?！!": 0.2,
+"，,+=-": 0.1
+}
+text/input_action="Null"
+text/autoadvance_enabled=true
+text/autoadvance_ignored_characters={
+".": null,
+"。": null,
+"！": null,
+"，": null,
+"？": null
+}
+audio/type_sound_bus="Dialogic"
 
 [display]
 
@@ -38,7 +92,7 @@ project/assembly_name="DDLC_Desk-pet"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SignalVisualizer/plugin.cfg", "res://addons/YouCanDoIt/plugin.cfg", "res://addons/project-time-tracker/plugin.cfg", "res://addons/runtime_debug_tools/plugin.cfg")
+enabled=PackedStringArray("res://addons/SignalVisualizer/plugin.cfg", "res://addons/YouCanDoIt/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/project-time-tracker/plugin.cfg", "res://addons/runtime_debug_tools/plugin.cfg")
 
 [input]
 
@@ -46,6 +100,19 @@ mouse_left={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
+}
+dialogic_default_action={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+Null={
+"deadzone": 0.5,
+"events": []
 }
 
 [layer_names]

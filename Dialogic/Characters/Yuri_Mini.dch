@@ -1,0 +1,32 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.33007, 0.0765381, 0.445312, 1),
+"custom_info": {
+"prefix": "",
+"sound_mood_default": "Tone",
+"sound_moods": {
+"Tone": {
+"mode": 0,
+"name": "Tone",
+"pitch_base": 1.6,
+"pitch_variance": -0.1,
+"skip_characters": 0.0,
+"sound_path": "res://Assets/Audios/Character_Audios/character.wav",
+"volume_base": 0.0,
+"volume_variance": 0.0
+}
+},
+"style": "Yuri_Mini_Styles",
+"suffix": ""
+},
+"default_portrait": "",
+"description": "",
+"display_name": "优里",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {},
+"scale": 1.0
+}

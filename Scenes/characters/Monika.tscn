@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://bjt8r4emkrpdo"]
+[gd_scene load_steps=72 format=3 uid="uid://bjt8r4emkrpdo"]
 
 [ext_resource type="Texture2D" uid="uid://dj7f2wt8eclv4" path="res://Assets/Textures/Character/m_sticker_1.png" id="1_o4eai"]
 [ext_resource type="Script" path="res://Scripts/UI/Monika_penetrating.cs" id="1_so8ya"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bhhrjpr511x61" path="res://Assets/Textures/Character/m_sticker_2.png" id="4_uwjln"]
 [ext_resource type="Script" path="res://ai/tasks/direction_change.cs" id="5_qla25"]
 [ext_resource type="Script" path="res://Scripts/characters/MouseMove.cs" id="5_yn1n7"]
+[ext_resource type="Script" path="res://Scripts/characters/dialogic_Monika.gd" id="8_yujo5"]
 
 [sub_resource type="Animation" id="Animation_4ti7m"]
 length = 0.001
@@ -70,6 +71,158 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Character_jump:process_mode")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect:pivot_offset")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(59, 43.53)]
+}
+
+[sub_resource type="Animation" id="Animation_hcsas"]
+resource_name = "Speak"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_uwjln")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character_jump:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:pivot_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(59, 156.05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.233333, 0.5, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0523599, 0.0, -0.0523599, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kxq0x"]
+resource_name = "grab"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_uwjln")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.174533, 0.0, -0.174533, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Polygon2D:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(326, 168, 510, 177, 591, 174, 900, 171, 887, 388, 898, 485, 585, 460, 321, 465)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("movements:character_direction")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect:pivot_offset")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(59, 43.53)]
+}
 
 [sub_resource type="Animation" id="Animation_2u3uh"]
 resource_name = "left"
@@ -85,22 +238,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-1, 1), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_gqt0v"]
-resource_name = "right"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(-1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_bk1nu"]
@@ -154,74 +291,51 @@ tracks/3/keys = {
 "update": 1,
 "values": [ExtResource("1_o4eai")]
 }
-
-[sub_resource type="Animation" id="Animation_kxq0x"]
-resource_name = "grab"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("4_uwjln")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.174533, 0.0, -0.174533, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Polygon2D:polygon")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [PackedVector2Array(417, 269, 514, 264, 559, 266, 725, 264, 728, 366, 726, 457, 585, 460, 416, 457)]
-}
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("movements:character_direction")
+tracks/4/path = NodePath("Character_jump:process_mode")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect:pivot_offset")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(59, 43.53)]
+}
+
+[sub_resource type="Animation" id="Animation_gqt0v"]
+resource_name = "right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rboqg"]
 _data = {
 "RESET": SubResource("Animation_4ti7m"),
+"Speak": SubResource("Animation_hcsas"),
 "grab": SubResource("Animation_kxq0x"),
 "left": SubResource("Animation_2u3uh"),
 "recovery": SubResource("Animation_bk1nu"),
@@ -399,6 +513,43 @@ root_task = SubResource("BTSelector_4p4bu")
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_pct0h"]
 
+[sub_resource type="Animation" id="Animation_0pw1o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D:polygon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(488, 303, 553, 135, 911, 124, 908, 297, 686, 318, 637, 416, 589, 469, 517, 436)]
+}
+
+[sub_resource type="Animation" id="Animation_5f1i6"]
+resource_name = "Speak"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D:polygon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(488, 303, 553, 135, 911, 124, 908, 297, 686, 318, 637, 416, 589, 469, 517, 436)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ecjr8"]
+_data = {
+"RESET": SubResource("Animation_0pw1o"),
+"Speak": SubResource("Animation_5f1i6")
+}
+
 [node name="Monika" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -434,7 +585,7 @@ script = ExtResource("3_a6jva")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(505, 348, 521, 287, 559, 266, 641, 291, 639, 344, 637, 426, 589, 454, 525, 452)
+polygon = PackedVector2Array(488, 303, 553, 135, 911, 124, 908, 297, 686, 318, 637, 416, 589, 469, 517, 436)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -447,6 +598,17 @@ script = ExtResource("5_yn1n7")
 [node name="Character_jump" type="BTPlayer" parent="."]
 behavior_tree = SubResource("BehaviorTree_m3r61")
 blackboard_plan = SubResource("BlackboardPlan_pct0h")
+
+[node name="Dialogic" type="Node2D" parent="."]
+script = ExtResource("8_yujo5")
+
+[node name="Bubble_Position" type="Marker2D" parent="."]
+position = Vector2(607, 310)
+
+[node name="Penetration Position" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ecjr8")
+}
 
 [connection signal="focus_entered" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_entered"]
 [connection signal="focus_exited" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_exited"]

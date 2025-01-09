@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://cew0t7erof5td"]
+[gd_scene load_steps=71 format=3 uid="uid://cew0t7erof5td"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Yuri_penetrating.cs" id="1_mhgfw"]
 [ext_resource type="Texture2D" uid="uid://bwjeap5tcl01q" path="res://Assets/Textures/Character/y_sticker_1.png" id="2_n0tr3"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://ai/tasks/direction_left.cs" id="4_p53hl"]
 [ext_resource type="Script" path="res://ai/tasks/direction_change.cs" id="5_8t3m4"]
 [ext_resource type="Script" path="res://Scripts/characters/MouseMove.cs" id="5_qs7c0"]
+[ext_resource type="Script" path="res://Scripts/characters/dialogic_Yuri.gd" id="8_suurs"]
 
 [sub_resource type="Animation" id="Animation_4ti7m"]
 length = 0.001
@@ -70,6 +71,146 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Character_jump:process_mode")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_43vo7"]
+resource_name = "Speak"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_oiqpg")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character_jump:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:pivot_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(56, 146.25)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.233333, 0.5, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0523599, 0.0, -0.0523599, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_udow0"]
+resource_name = "grab"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_oiqpg")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.174533, 0.0, -0.174533, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Polygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(343, 517, 339, 422, 343, 216, 539, 200, 626, 198, 933, 181, 905, 387, 911, 515, 742, 512, 658, 512, 562, 509, 496, 503)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("movements:character_direction")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect:pivot_offset")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(56, 29.24)]
+}
 
 [sub_resource type="Animation" id="Animation_2u3uh"]
 resource_name = "left"
@@ -85,22 +226,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-1, 1), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_gqt0v"]
-resource_name = "right"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(-1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_p3rrq"]
@@ -154,78 +279,76 @@ tracks/3/keys = {
 "update": 0,
 "values": [PackedVector2Array(523, 390, 516, 358, 518, 318, 562, 288, 618, 297, 637, 339, 628, 386, 644, 425, 620, 457, 565, 465, 531, 455, 513, 423)]
 }
-
-[sub_resource type="Animation" id="Animation_udow0"]
-resource_name = "grab"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("4_oiqpg")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.174533, 0.0, -0.174533, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Polygon2D:polygon")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [PackedVector2Array(420, 504, 439, 398, 441, 281, 554, 283, 629, 279, 747, 291, 745, 359, 745, 419, 742, 512, 651, 500, 562, 509, 496, 503)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("TextureRect:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("movements:character_direction")
+tracks/4/path = NodePath("Character_jump:process_mode")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect:pivot_offset")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(56, 29.24)]
+}
+
+[sub_resource type="Animation" id="Animation_gqt0v"]
+resource_name = "right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rboqg"]
 _data = {
 "RESET": SubResource("Animation_4ti7m"),
+"Speak": SubResource("Animation_43vo7"),
 "grab": SubResource("Animation_udow0"),
 "left": SubResource("Animation_2u3uh"),
 "recovery": SubResource("Animation_p3rrq"),
 "right": SubResource("Animation_gqt0v")
+}
+
+[sub_resource type="Animation" id="Animation_khih8"]
+resource_name = "Speak"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D:polygon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(502, 288, 534, 124, 911, 124, 908, 297, 686, 318, 663, 445, 589, 469, 501, 457)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_abjfl"]
+_data = {
+"Speak": SubResource("Animation_khih8")
 }
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_cwdv2"]
@@ -441,12 +564,23 @@ libraries = {
 "": SubResource("AnimationLibrary_rboqg")
 }
 
+[node name="Penetration Position" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_abjfl")
+}
+
 [node name="mouse_move" type="Node2D" parent="."]
 script = ExtResource("5_qs7c0")
 
 [node name="Character_jump" type="BTPlayer" parent="."]
 behavior_tree = SubResource("BehaviorTree_2httu")
 blackboard_plan = SubResource("BlackboardPlan_cwxew")
+
+[node name="Dialogic" type="Node2D" parent="."]
+script = ExtResource("8_suurs")
+
+[node name="Bubble_Position" type="Marker2D" parent="."]
+position = Vector2(609, 317)
 
 [connection signal="focus_entered" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_entered"]
 [connection signal="focus_exited" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_exited"]

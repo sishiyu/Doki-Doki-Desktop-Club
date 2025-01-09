@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=7 format=3 uid="uid://8t2aa6aci4qe"]
+
+[ext_resource type="PackedScene" uid="uid://syki6k0e6aac" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_TextBubble/text_bubble_base.tscn" id="1_26q4b"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_f2mcr"]
+[ext_resource type="PackedScene" uid="uid://d2it0xiap3gnt" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.tscn" id="4_7haj0"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="5_oue1y"]
+
+[sub_resource type="Resource" id="Resource_801c4"]
+script = ExtResource("2_f2mcr")
+scene = ExtResource("1_26q4b")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_4wqys"]
+script = ExtResource("2_f2mcr")
+scene = ExtResource("4_7haj0")
+overrides = {
+"box_modulate": "Color(0.271606, 0.78125, 0.327349, 1)",
+"box_wobble_detail": "0.3",
+"box_wobble_speed": "1.3",
+"text_color": "Color(0.154877, 0.226562, 0.159357, 1)"
+}
+
+[resource]
+script = ExtResource("5_oue1y")
+name = "Monika_Mini_Styles"
+layer_list = Array[String](["11"])
+layer_info = {
+"": SubResource("Resource_801c4"),
+"11": SubResource("Resource_4wqys")
+}
+base_overrides = {}
+layers = Array[ExtResource("2_f2mcr")]([])
+metadata/_latest_layer = ""

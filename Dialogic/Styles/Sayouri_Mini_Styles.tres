@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=7 format=3 uid="uid://dlpmglh41005l"]
+
+[ext_resource type="PackedScene" uid="uid://syki6k0e6aac" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_TextBubble/text_bubble_base.tscn" id="1_ftj4i"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_ng4jx"]
+[ext_resource type="PackedScene" uid="uid://d2it0xiap3gnt" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.tscn" id="4_o4gbq"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="5_kux0f"]
+
+[sub_resource type="Resource" id="Resource_yfil5"]
+script = ExtResource("2_ng4jx")
+scene = ExtResource("1_ftj4i")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_3vpqs"]
+script = ExtResource("2_ng4jx")
+scene = ExtResource("4_o4gbq")
+overrides = {
+"box_modulate": "Color(0.835938, 0.60083, 0.60083, 1)",
+"box_wobble_detail": "0.3",
+"box_wobble_speed": "1.3",
+"text_color": "Color(0.320312, 0.19519, 0.19519, 1)"
+}
+
+[resource]
+script = ExtResource("5_kux0f")
+name = "Sayouri_Mini_Styles"
+layer_list = Array[String](["11"])
+layer_info = {
+"": SubResource("Resource_yfil5"),
+"11": SubResource("Resource_3vpqs")
+}
+base_overrides = {}
+layers = Array[ExtResource("2_ng4jx")]([])
+metadata/_latest_layer = ""

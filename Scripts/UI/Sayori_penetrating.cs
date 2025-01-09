@@ -3,7 +3,7 @@ using System;
 
 public partial class Sayori_penetrating : Control
 {
-	
+	Node2D Dialogic_Manager;//对话管理器节点
 
 	
 	public override void _Ready()
