@@ -156,6 +156,16 @@ var Voice := preload("res://addons/dialogic/Modules/Voice/subsystem_voice.gd").n
 ## Autoloads are added first, so this happens REALLY early on game startup.
 func _ready() -> void:
 	_collect_subsystems()
+	var style: DialogicStyle = load("res://Dialogic/Styles/Sayouri_Mini_Styles.tres")
+	style.prepare()	
+	style = load("res://Dialogic/Styles/Monika_Mini_Styles.tres")
+	style.prepare()	
+	style = load("res://Dialogic/Styles/Natsuki_Mini_Styles.tres")
+	style.prepare()	
+	style = load("res://Dialogic/Styles/Yuri_Mini_Styles.tres")
+	style.prepare()	
+	style = load("res://Dialogic/Styles/System_Bubble.tres")
+	style.prepare()	
 
 	clear()
 

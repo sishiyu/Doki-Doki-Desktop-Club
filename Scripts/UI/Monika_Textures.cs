@@ -13,4 +13,12 @@ GetTree().CurrentScene.GetNode<AudioStreamPlayer>("UI_choose_Audio").Play();//�
 	{
 		GetNode<AnimationPlayer>("AnimationPlayer").Play("recover");
 	}
+
+	void _on_focus_entered()
+	{
+		GetNode<AutoLoad_Data>("/root/AutoLoadData").desktopCharacter = "Monika";//设置当前桌面角色为Monika
+		GetNode<AutoLoad_Data>("/root/AutoLoadData").save_player_data();//保存玩家数据
+
+		GetTree().ChangeSceneToFile("res://Scenes/characters/Monika.tscn");//切换到Monika场景
+	}
 }

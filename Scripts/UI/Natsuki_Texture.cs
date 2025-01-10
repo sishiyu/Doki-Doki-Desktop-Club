@@ -13,4 +13,12 @@ GetNode<AnimationPlayer>("AnimationPlayer").Play("choose");//切换动画
 		GetNode<AnimationPlayer>("AnimationPlayer").Play("recover");//切换动画
 	}
 
+	void _on_focus_entered()
+	{
+		GetNode<AutoLoad_Data>("/root/AutoLoadData").desktopCharacter = "Natsuki";//设置当前桌面角色为Natsuki
+		GetNode<AutoLoad_Data>("/root/AutoLoadData").save_player_data();//保存玩家数据
+
+		GetTree().ChangeSceneToFile("res://Scenes/characters/Natsuki.tscn");//切换natsuki场景
+	}
+
 }

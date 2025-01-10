@@ -1,13 +1,14 @@
-[gd_scene load_steps=71 format=3 uid="uid://cew0t7erof5td"]
+[gd_scene load_steps=72 format=3 uid="uid://cew0t7erof5td"]
 
-[ext_resource type="Script" path="res://Scripts/UI/Yuri_penetrating.cs" id="1_mhgfw"]
-[ext_resource type="Texture2D" uid="uid://bwjeap5tcl01q" path="res://Assets/Textures/Character/y_sticker_1.png" id="2_n0tr3"]
-[ext_resource type="Script" path="res://Scripts/characters/Movements.cs" id="3_r6t4k"]
-[ext_resource type="Texture2D" uid="uid://0o5iy1dca014" path="res://Assets/Textures/Character/y_sticker_2.png" id="4_oiqpg"]
-[ext_resource type="Script" path="res://ai/tasks/direction_left.cs" id="4_p53hl"]
-[ext_resource type="Script" path="res://ai/tasks/direction_change.cs" id="5_8t3m4"]
-[ext_resource type="Script" path="res://Scripts/characters/MouseMove.cs" id="5_qs7c0"]
-[ext_resource type="Script" path="res://Scripts/characters/dialogic_Yuri.gd" id="8_suurs"]
+[ext_resource type="Script" path="res://Scripts/UI/Yuri_penetrating.cs" id="1_6y0xp"]
+[ext_resource type="Texture2D" uid="uid://bwjeap5tcl01q" path="res://Assets/Textures/Character/y_sticker_1.png" id="2_2drgl"]
+[ext_resource type="Script" path="res://Scripts/characters/Movements.cs" id="3_vh063"]
+[ext_resource type="Texture2D" uid="uid://0o5iy1dca014" path="res://Assets/Textures/Character/y_sticker_2.png" id="4_jrku7"]
+[ext_resource type="Script" path="res://Scripts/characters/MouseMove.cs" id="5_gwxm6"]
+[ext_resource type="Script" path="res://ai/tasks/direction_left.cs" id="6_4v7kj"]
+[ext_resource type="Script" path="res://ai/tasks/direction_change.cs" id="7_wfokl"]
+[ext_resource type="Script" path="res://Scripts/characters/dialogic_Yuri.gd" id="8_154hc"]
+[ext_resource type="PackedScene" uid="uid://bjvx77mes6ufw" path="res://Scenes/UI/first_game_window_prompt.tscn" id="9_hek65"]
 
 [sub_resource type="Animation" id="Animation_4ti7m"]
 length = 0.001
@@ -45,7 +46,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_n0tr3")]
+"values": [ExtResource("2_2drgl")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -97,7 +98,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_oiqpg")]
+"values": [ExtResource("4_jrku7")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -149,7 +150,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_oiqpg")]
+"values": [ExtResource("4_jrku7")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -265,7 +266,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_n0tr3")]
+"values": [ExtResource("2_2drgl")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -354,7 +355,7 @@ _data = {
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_cwdv2"]
 
 [sub_resource type="BTAction" id="BTAction_lfjrm"]
-script = ExtResource("4_p53hl")
+script = ExtResource("6_4v7kj")
 
 [sub_resource type="BBNode" id="BBNode_7sra1"]
 resource_name = "AnimationPlayer"
@@ -369,12 +370,12 @@ children = [SubResource("BTPlayAnimation_bm2b5")]
 run_chance = 0.3
 
 [sub_resource type="BTAction" id="BTAction_8p6m5"]
-script = ExtResource("5_8t3m4")
+script = ExtResource("7_wfokl")
 
 [sub_resource type="BTWait" id="BTWait_ihb8x"]
 
 [sub_resource type="BTAction" id="BTAction_4i8iq"]
-script = ExtResource("4_p53hl")
+script = ExtResource("6_4v7kj")
 
 [sub_resource type="BTWait" id="BTWait_es5y2"]
 duration = 0.5
@@ -397,7 +398,7 @@ custom_name = "direction_change"
 children = [SubResource("BTAction_lfjrm"), SubResource("BTProbability_66nvr"), SubResource("BTAction_8p6m5"), SubResource("BTWait_ihb8x"), SubResource("BTAction_4i8iq"), SubResource("BTWait_es5y2"), SubResource("BTCallMethod_33uuk"), SubResource("BTFail_qkcd4"), SubResource("BTComment_j7acg")]
 
 [sub_resource type="BTAction" id="BTAction_nyplu"]
-script = ExtResource("4_p53hl")
+script = ExtResource("6_4v7kj")
 
 [sub_resource type="BTInvert" id="BTInvert_22hw2"]
 children = [SubResource("BTAction_nyplu")]
@@ -415,12 +416,12 @@ children = [SubResource("BTPlayAnimation_ophti")]
 run_chance = 0.3
 
 [sub_resource type="BTAction" id="BTAction_sahwt"]
-script = ExtResource("5_8t3m4")
+script = ExtResource("7_wfokl")
 
 [sub_resource type="BTWait" id="BTWait_upi6l"]
 
 [sub_resource type="BTAction" id="BTAction_tio44"]
-script = ExtResource("4_p53hl")
+script = ExtResource("6_4v7kj")
 
 [sub_resource type="BTInvert" id="BTInvert_5d7h8"]
 children = [SubResource("BTAction_tio44")]
@@ -461,7 +462,7 @@ custom_name = "Standby"
 children = [SubResource("BTAlwaysSucceed_ikm7m"), SubResource("BTFail_fthyb"), SubResource("BTComment_ktjwx")]
 
 [sub_resource type="BTAction" id="BTAction_m7uvl"]
-script = ExtResource("4_p53hl")
+script = ExtResource("6_4v7kj")
 
 [sub_resource type="BBNode" id="BBNode_io3rs"]
 resource_name = "movements"
@@ -485,7 +486,7 @@ custom_name = "jump_left"
 children = [SubResource("BTAction_m7uvl"), SubResource("BTProbability_qqqhx"), SubResource("BTFail_3mfvy"), SubResource("BTComment_ki47y")]
 
 [sub_resource type="BTAction" id="BTAction_enbgl"]
-script = ExtResource("4_p53hl")
+script = ExtResource("6_4v7kj")
 
 [sub_resource type="BTInvert" id="BTInvert_p8718"]
 children = [SubResource("BTAction_enbgl")]
@@ -529,7 +530,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_mhgfw")
+script = ExtResource("1_6y0xp")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -546,14 +547,14 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(56, 29.24)
 focus_mode = 2
-texture = ExtResource("2_n0tr3")
+texture = ExtResource("2_2drgl")
 
 [node name="movements" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("3_r6t4k")
+script = ExtResource("3_vh063")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(1, 1, 1, 0)
@@ -570,17 +571,19 @@ libraries = {
 }
 
 [node name="mouse_move" type="Node2D" parent="."]
-script = ExtResource("5_qs7c0")
+script = ExtResource("5_gwxm6")
 
 [node name="Character_jump" type="BTPlayer" parent="."]
 behavior_tree = SubResource("BehaviorTree_2httu")
 blackboard_plan = SubResource("BlackboardPlan_cwxew")
 
 [node name="Dialogic" type="Node2D" parent="."]
-script = ExtResource("8_suurs")
+script = ExtResource("8_154hc")
 
 [node name="Bubble_Position" type="Marker2D" parent="."]
 position = Vector2(609, 317)
+
+[node name="First Game Window Prompt" parent="." instance=ExtResource("9_hek65")]
 
 [connection signal="focus_entered" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_entered"]
 [connection signal="focus_exited" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_exited"]

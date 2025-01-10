@@ -11,20 +11,6 @@ public partial class Name_Button : Button
 
     public override void _Ready()
     {
-       if(Godot.FileAccess.FileExists("user://player_data.tres"))//如果玩家数据文件存在
-	   {
-          Player_Data player_Data_file = ResourceLoader.Load("user://player_data.tres") as Player_Data;//加载玩家数据文件
-
-	           if(player_Data_file.player_name!= ""&& player_Data_file.player_name!= null)//如果玩家名字不为空
-	           {
-				  GetParent().Call("End_timeLine");//结束对话时间轴
-				  
-		         GetTree().CallDeferred("change_scene_to_file","res://Scenes/Interfaces/select_character.tscn");//切换到选择角色界面
-	           }
-
-	   }
-
-
         name_edit = GetParent().GetNode<LineEdit>("LineEdit");
 		player_data = new Player_Data();//实例化玩家数据文件
     }
@@ -32,11 +18,11 @@ public partial class Name_Button : Button
 	{
       if(name_edit.Text!= "")
 	  {
-		player_data.player_name = name_edit.Text;//保存玩家名字到玩家数据文件
-		ResourceSaver.Save(player_data,"user://player_data.tres");//保存玩家数据文件
+		GetNode<AutoLoad_Data>("/root/AutoLoadData").playerName = name_edit.Text;//设置玩家名字
+		GetNode<AutoLoad_Data>("/root/AutoLoadData").save_player_data();//保存玩家数据
 		
         GetParent().Call("End_timeLine");//结束对话时间轴
-		GetTree().ChangeSceneToFile("res://Scenes/Interfaces/select_character.tscn");//切换到选择角色界面
+		GetTree().ChangeSceneToFile("res://Scenes/UI/select_character.tscn");//切换到选择角色界面
 	  }
 	}
 }

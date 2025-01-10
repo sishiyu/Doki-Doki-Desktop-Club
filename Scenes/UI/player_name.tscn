@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgu1gnvjbgext"]
+[gd_scene load_steps=6 format=3 uid="uid://bgu1gnvjbgext"]
 
-[ext_resource type="Script" path="res://Scripts/UI/player_name.gd" id="1_g23a5"]
-[ext_resource type="Texture2D" uid="uid://fojqpxcp5m6m" path="res://Assets/Textures/UI/frame.png" id="1_ojjn7"]
-[ext_resource type="Script" path="res://Scripts/UI/Name_Button.cs" id="3_c1u04"]
+[ext_resource type="Script" path="res://Scripts/UI/player_name.gd" id="1_gafar"]
+[ext_resource type="Texture2D" uid="uid://fojqpxcp5m6m" path="res://Assets/Textures/UI/frame.png" id="2_jr1te"]
+[ext_resource type="Script" path="res://Scripts/UI/Name_Button.cs" id="3_4fvwd"]
+[ext_resource type="AudioStream" uid="uid://dt7igrpa6vgfu" path="res://Assets/Audios/BGM/4.ogg" id="4_i32m7"]
+[ext_resource type="Script" path="res://Scripts/UI/player_name/bgm.gd" id="5_cfryh"]
 
 [node name="Player_Name" type="Control"]
 layout_mode = 3
@@ -11,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_g23a5")
+script = ExtResource("1_gafar")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -27,7 +29,7 @@ offset_bottom = 77.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(300, 125)
-texture = ExtResource("1_ojjn7")
+texture = ExtResource("2_jr1te")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 1
@@ -71,10 +73,14 @@ theme_override_colors/font_focus_color = Color(0.901961, 0.294118, 0.478431, 1)
 theme_override_colors/font_color = Color(0.8, 0.392157, 0.396078, 1)
 text = "就这样"
 flat = true
-script = ExtResource("3_c1u04")
+script = ExtResource("3_4fvwd")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(254, 112, 893, 112, 896, 402, 256, 400)
+polygon = PackedVector2Array(254, 112, 893, 112, 897, 409, 256, 407)
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_i32m7")
+script = ExtResource("5_cfryh")
 
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

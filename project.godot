@@ -11,12 +11,12 @@ config_version=5
 [application]
 
 config/name="Doki Doki Desktop Club"
-run/main_scene="res://Scenes/Interfaces/select_character.tscn"
+run/main_scene="res://Scenes/UI/player_name.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 boot_splash/bg_color=Color(1, 1, 1, 0)
-boot_splash/image="res://Long.png"
+boot_splash/image="res://long.png"
 boot_splash/use_filter=false
-config/icon="res://Long.png"
+config/icon="res://long.png"
 boot_splash/minimum_display_time=100
 
 [autoload]
@@ -24,6 +24,7 @@ boot_splash/minimum_display_time=100
 Signal_Debugger="*res://addons/SignalVisualizer/Debugger/SignalDebugger.gd"
 RuntimeDebugTools="*res://addons/runtime_debug_tools/scenes/remote_inspector.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+AutoLoadData="*res://Scripts/data/AutoLoad_Data.cs"
 
 [dialogic]
 
@@ -84,9 +85,10 @@ text/autocolor_names=false
 
 [display]
 
-window/size/borderless=true
 window/size/always_on_top=true
 window/size/transparent=true
+window/energy_saving/keep_screen_on=false
+window/subwindows/embed_subwindows=false
 window/per_pixel_transparency/allowed=true
 
 [dotnet]

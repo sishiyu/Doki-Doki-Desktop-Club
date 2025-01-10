@@ -6,6 +6,13 @@ public partial class SelectCharacter_penetrating : Control
 	
 	public override void _Ready()
 	{
+		AutoLoad_Data autoLoad_ = GetNode<AutoLoad_Data>("/root/AutoLoadData");
+      
+		
+	   
+
+
+
 		Polygon2D poly = GetNode<Polygon2D>("Polygon2D");
 		var points = (Vector2[])poly.Get("polygon");
 		DisplayServer.WindowSetMousePassthrough(points);//鼠标穿透

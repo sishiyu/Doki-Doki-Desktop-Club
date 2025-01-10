@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://bjt8r4emkrpdo"]
+[gd_scene load_steps=73 format=3 uid="uid://bjt8r4emkrpdo"]
 
 [ext_resource type="Texture2D" uid="uid://dj7f2wt8eclv4" path="res://Assets/Textures/Character/m_sticker_1.png" id="1_o4eai"]
 [ext_resource type="Script" path="res://Scripts/UI/Monika_penetrating.cs" id="1_so8ya"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://ai/tasks/direction_change.cs" id="5_qla25"]
 [ext_resource type="Script" path="res://Scripts/characters/MouseMove.cs" id="5_yn1n7"]
 [ext_resource type="Script" path="res://Scripts/characters/dialogic_Monika.gd" id="8_yujo5"]
+[ext_resource type="PackedScene" uid="uid://bjvx77mes6ufw" path="res://Scenes/UI/first_game_window_prompt.tscn" id="9_do23g"]
 
 [sub_resource type="Animation" id="Animation_4ti7m"]
 length = 0.001
@@ -343,6 +344,11 @@ _data = {
 }
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_eywtt"]
+var/var/name = &"var"
+var/var/type = 3
+var/var/value = 0.0
+var/var/hint = 0
+var/var/hint_string = ""
 
 [sub_resource type="BTAction" id="BTAction_yxm73"]
 script = ExtResource("4_krvsg")
@@ -511,7 +517,7 @@ children = [SubResource("BTSequence_ytf4d"), SubResource("BTSequence_68ken"), Su
 blackboard_plan = SubResource("BlackboardPlan_eywtt")
 root_task = SubResource("BTSelector_4p4bu")
 
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_pct0h"]
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_ryk4n"]
 
 [sub_resource type="Animation" id="Animation_0pw1o"]
 length = 0.001
@@ -541,7 +547,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [PackedVector2Array(488, 303, 553, 135, 911, 124, 908, 297, 686, 318, 637, 416, 589, 469, 517, 436)]
+"values": [PackedVector2Array(488, 303, 553, 135, 911, 124, 908, 297, 686, 318, 644, 425, 589, 469, 517, 436)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ecjr8"]
@@ -597,7 +603,7 @@ script = ExtResource("5_yn1n7")
 
 [node name="Character_jump" type="BTPlayer" parent="."]
 behavior_tree = SubResource("BehaviorTree_m3r61")
-blackboard_plan = SubResource("BlackboardPlan_pct0h")
+blackboard_plan = SubResource("BlackboardPlan_ryk4n")
 
 [node name="Dialogic" type="Node2D" parent="."]
 script = ExtResource("8_yujo5")
@@ -609,6 +615,8 @@ position = Vector2(607, 310)
 libraries = {
 "": SubResource("AnimationLibrary_ecjr8")
 }
+
+[node name="First Game Window Prompt" parent="." instance=ExtResource("9_do23g")]
 
 [connection signal="focus_entered" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_entered"]
 [connection signal="focus_exited" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_exited"]
