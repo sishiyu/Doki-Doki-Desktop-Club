@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b5nd1narvp15i"
+
+[deps]
+
+files=["res://Language/Dialogic_Language/dialogic_Natsuki_Greeting_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_Greeting_translation.en.translation"]
+
+source_file="res://Language/Dialogic_Language/dialogic_Natsuki_Greeting_translation.csv"
+dest_files=["res://Language/Dialogic_Language/dialogic_Natsuki_Greeting_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_Greeting_translation.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

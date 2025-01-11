@@ -25,6 +25,7 @@ Signal_Debugger="*res://addons/SignalVisualizer/Debugger/SignalDebugger.gd"
 RuntimeDebugTools="*res://addons/runtime_debug_tools/scenes/remote_inspector.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AutoLoadData="*res://Scripts/data/AutoLoad_Data.cs"
+MouseThroughC="*res://Scripts/UI/MouseThrough_C.cs"
 
 [dialogic]
 
@@ -53,7 +54,7 @@ text/letter_speed=0.1
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
-text/autoadvance_per_character_delay=0.2
+text/autoadvance_per_character_delay=0.1
 text/autoadvance_ignored_characters_enabled=true
 audio/max_channels=4.0
 animations/join_default_length=0.5
@@ -82,6 +83,19 @@ text/autoadvance_ignored_characters={
 }
 audio/type_sound_bus="Dialogic"
 text/autocolor_names=false
+translation/enabled=true
+translation/original_locale="zh_CN"
+translation/file_mode=1
+translation/translation_folder="res://Language/Dialogic_Language"
+translation/save_mode=0
+translation/add_separator=true
+timer/process_in_physics=false
+translation/id_counter=31
+translation/locales=["en", "zh_CN"]
+translation/intern/save_mode=0
+translation/intern/file_mode=1
+translation/intern/translation_folder="res://Language/Dialogic_Language"
+text/autoadvance_per_word_delay=0
 
 [display]
 
@@ -119,6 +133,10 @@ Null={
 "deadzone": 0.5,
 "events": []
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://Language/Dialogic_Language/dialogic_Monika_Greeting_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_Greeting_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_character_translations.en.translation", "res://Language/Dialogic_Language/dialogic_character_translations.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_Greeting_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_Greeting_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Player_Name_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Player_Name_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_Greeting_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_Greeting_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Yuri_Greeting_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Yuri_Greeting_translation.zh_CN.translation", "res://Language/language.en.translation", "res://Language/language.zh_CN.translation")
 
 [layer_names]
 

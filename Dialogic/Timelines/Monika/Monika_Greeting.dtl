@@ -1,3 +1,3 @@
 [signal arg="Speak"]
-Monika_Mini: Hi,{PlayerName},又见面了！
+Monika_Mini: Hi,{PlayerName},我们又见面了！ #id:11
 [signal arg="End"]

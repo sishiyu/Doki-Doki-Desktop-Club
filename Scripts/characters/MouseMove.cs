@@ -5,18 +5,18 @@ public partial class MouseMove : Node2D
 {
 	public bool grab;
 	Vector2I window_pos;
-	Polygon2D poly;//声明一个Polygon2D节点
+	
 	[Export]public bool Capture;//是否属于抓取状态
 
     public override void _Ready()
     {
-		poly = GetParent().GetNode<Polygon2D>("Polygon2D");//获取Polygon2D节点
+		
     }
 
 
     public override void _PhysicsProcess(double delta)
     {
-		 DisplayServer.WindowSetMousePassthrough(poly.Polygon);//鼠标穿透
+	
 
          if(grab)
 		{

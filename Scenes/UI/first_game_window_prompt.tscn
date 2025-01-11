@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bjvx77mes6ufw"]
 
 [ext_resource type="Script" path="res://Scripts/UI/First Game Window Prompt/FirstGameWindowPrompt.cs" id="1_7m53a"]
-[ext_resource type="Texture2D" uid="uid://fojqpxcp5m6m" path="res://Assets/Textures/UI/frame.png" id="1_18nei"]
+[ext_resource type="Texture2D" uid="uid://dp3h3p3hfauxi" path="res://Assets/Textures/UI/Preview (10)SoftPink.png" id="2_1qq2a"]
 [ext_resource type="Script" path="res://Scripts/UI/First Game Window Prompt/Go to the official website.gd" id="2_g6b72"]
 [ext_resource type="Script" path="res://Scripts/UI/First Game Window Prompt/Continue Game_2.gd" id="3_jcyfi"]
 
@@ -45,8 +45,7 @@ _data = {
 [node name="First Game Window Prompt" type="Window"]
 transparent_bg = true
 initial_position = 1
-size = Vector2i(608, 258)
-visible = false
+size = Vector2i(663, 264)
 borderless = true
 transparent = true
 unfocusable = true
@@ -54,66 +53,71 @@ script = ExtResource("1_7m53a")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 600.0
-offset_right = 1200.0
-offset_bottom = 250.0
-texture = ExtResource("1_18nei")
+offset_right = 1263.0
+offset_bottom = 264.0
+texture = ExtResource("2_1qq2a")
 
 [node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = 15.41
+offset_left = 35.71
 offset_top = 21.795
-offset_right = 578.41
+offset_right = 598.71
 offset_bottom = 44.795
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.768627, 0.313726, 0.462745, 1)
-text = "本作为《Doki Doki Literature Club》的同人作品，建议先行游玩原作再来体验"
+text = "STATEMENT1"
+autowrap_mode = 1
 
 [node name="Label2" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = 15.41
-offset_top = 46.0
-offset_right = 578.41
-offset_bottom = 69.0
+offset_left = 35.71
+offset_top = 73.805
+offset_right = 598.71
+offset_bottom = 96.805
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.768627, 0.313726, 0.462745, 1)
-text = "原作官网：https://ddlc.moe"
+text = "STATEMENT2"
 
 [node name="Label3" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = 15.41
+offset_left = 35.71
 offset_top = 100.665
-offset_right = 578.41
+offset_right = 598.71
 offset_bottom = 123.665
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.768627, 0.313726, 0.462745, 1)
-text = "另外，左键拖拽成员可以移动其位置，右键点击成员可以打开菜单"
+text = "STATEMENT3"
 
 [node name="Label5" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = 15.41
+offset_left = 35.71
 offset_top = 154.0
-offset_right = 578.41
+offset_right = 598.71
 offset_bottom = 177.0
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.768627, 0.313726, 0.462745, 1)
-text = "祝你玩得开心！"
+text = "STATEMENT4"
 
 [node name="Button" type="Button" parent="TextureRect"]
 layout_mode = 0
-offset_left = 17.375
-offset_top = 203.785
-offset_right = 121.375
-offset_bottom = 234.785
-text = "前往原作官网"
+offset_left = 100.895
+offset_top = 220.0
+offset_right = 237.895
+offset_bottom = 251.0
+theme_override_colors/font_color = Color(0.768627, 0.313726, 0.462745, 1)
+text = "https://ddlc.moe"
+flat = true
 script = ExtResource("2_g6b72")
 
 [node name="Button2" type="Button" parent="TextureRect"]
 layout_mode = 0
-offset_left = 148.495
-offset_top = 203.785
-offset_right = 252.495
-offset_bottom = 234.785
-text = "继续"
+offset_left = 442.405
+offset_top = 220.0
+offset_right = 546.405
+offset_bottom = 251.0
+theme_override_colors/font_color = Color(0.768627, 0.313726, 0.462745, 1)
+text = "STATEMENT_BUTTON2"
+flat = true
 script = ExtResource("3_jcyfi")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

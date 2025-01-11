@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bvuu4wkaehhgt"]
+[gd_scene load_steps=41 format=3 uid="uid://bvuu4wkaehhgt"]
 
 [ext_resource type="Script" path="res://Scripts/UI/SelectCharacter_penetrating.cs" id="1_h4of6"]
 [ext_resource type="Texture2D" uid="uid://s7340f0igf32" path="res://Assets/Textures/UI/background.png" id="2_myjfb"]
@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://mw2wax3i1wh3" path="res://Assets/Audios/UI/choose.ogg" id="18_yscgm"]
 [ext_resource type="AudioStream" uid="uid://ddklynu8dx24o" path="res://Assets/Audios/UI/click.ogg" id="19_nngea"]
 [ext_resource type="Script" path="res://Scripts/UI/Trig.cs" id="20_h206u"]
+[ext_resource type="Script" path="res://Scripts/data/dialogic_var_set.gd" id="21_v1cdr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v6bh2"]
 
@@ -698,6 +699,7 @@ scale = Vector2(7.81494, 7.81494)
 pivot_offset = Vector2(20, 20)
 
 [node name="statement" type="Label" parent="."]
+custom_minimum_size = Vector2(336.535, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -714,8 +716,8 @@ scale = Vector2(0.747972, 0.747972)
 pivot_offset = Vector2(168, 22)
 theme_override_colors/font_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("16_0kaho")
-text = "
-本作完全免费，如有人牟利，请及时联系开发者"
+text = "STARTUP_SLOGAN"
+autowrap_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -746,6 +748,9 @@ script = ExtResource("20_h206u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trig"]
 scale = Vector2(0.589931, 0.589931)
 shape = SubResource("CircleShape2D_yujup")
+
+[node name="Dialogic_var_set" type="Node" parent="."]
+script = ExtResource("21_v1cdr")
 
 [connection signal="focus_entered" from="character/Sayori" to="character/Sayori" method="_on_focus_entered"]
 [connection signal="area_entered" from="character/Sayori/Area2D" to="character/Sayori" method="_on_area_2d_area_entered"]

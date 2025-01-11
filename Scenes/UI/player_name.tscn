@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgu1gnvjbgext"]
+[gd_scene load_steps=11 format=3 uid="uid://bgu1gnvjbgext"]
 
 [ext_resource type="Script" path="res://Scripts/UI/player_name.gd" id="1_gafar"]
-[ext_resource type="Texture2D" uid="uid://fojqpxcp5m6m" path="res://Assets/Textures/UI/frame.png" id="2_jr1te"]
+[ext_resource type="Texture2D" uid="uid://ckd6l0ch5hfxp" path="res://Assets/Textures/UI/Preview (25)SoftPink.png" id="2_dpe5c"]
 [ext_resource type="Script" path="res://Scripts/UI/Name_Button.cs" id="3_4fvwd"]
+[ext_resource type="Texture2D" uid="uid://cpeyxsoqgyg33" path="res://Assets/Textures/UI/Button (2)SoftPink.png" id="3_b5184"]
 [ext_resource type="AudioStream" uid="uid://dt7igrpa6vgfu" path="res://Assets/Audios/BGM/4.ogg" id="4_i32m7"]
 [ext_resource type="Script" path="res://Scripts/UI/player_name/bgm.gd" id="5_cfryh"]
+[ext_resource type="Script" path="res://Scripts/UI/mouse_through.gd" id="6_76b0o"]
+[ext_resource type="FontFile" uid="uid://dn2mr41k1n7ls" path="res://Assets/Fonts/RifficFree-Bold.ttf" id="8_luput"]
+[ext_resource type="Script" path="res://Scripts/UI/player_name/LanguageEnglish.cs" id="8_mc3v8"]
+[ext_resource type="Script" path="res://Scripts/UI/player_name/LanguageCn.cs" id="9_anlyn"]
 
 [node name="Player_Name" type="Control"]
 layout_mode = 3
@@ -14,8 +19,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gafar")
+Dialogic_System_path = "res://Dialogic/Characters/System.dch"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="bg" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -23,13 +29,29 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -300.0
-offset_top = -173.0
+offset_top = -125.0
 offset_right = 300.0
-offset_bottom = 77.0
+offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(300, 125)
-texture = ExtResource("2_jr1te")
+texture = ExtResource("2_dpe5c")
+
+[node name="LineEdit_bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -30.0
+offset_right = 117.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(117, 30)
+texture = ExtResource("3_b5184")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 1
@@ -38,22 +60,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -61.0
-offset_top = -40.0
-offset_right = 60.0
-offset_bottom = -9.0
+offset_left = -60.5
+offset_top = -15.5
+offset_right = 60.5
+offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(33, 15)
+pivot_offset = Vector2(60, 15)
+theme_override_colors/caret_color = Color(0.803922, 0.376471, 0.478431, 1)
+theme_override_colors/font_placeholder_color = Color(0.509286, 0.509286, 0.509286, 1)
 theme_override_colors/font_color = Color(0.803922, 0.376471, 0.478431, 1)
-placeholder_text = "输入你的名字："
+placeholder_text = "PLAYER_NAME_"
 max_length = 6
 expand_to_text_length = true
+flat = true
 select_all_on_focus = true
 caret_blink = true
 
 [node name="Bubble_Position" type="Marker2D" parent="."]
-position = Vector2(601, 304)
+position = Vector2(646, 320)
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -62,25 +87,71 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -12.0
-offset_top = -291.0
-offset_right = 12.0
-offset_bottom = -260.0
+offset_left = -28.0
+offset_top = -128.0
+offset_right = 28.0
+offset_bottom = -97.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(12, 15)
-theme_override_colors/font_focus_color = Color(0.901961, 0.294118, 0.478431, 1)
-theme_override_colors/font_color = Color(0.8, 0.392157, 0.396078, 1)
-text = "就这样"
+theme_override_colors/font_color = Color(0.694118, 0.423529, 0.466667, 1)
+text = "PLAYER_NAME_SUBMIT"
 flat = true
 script = ExtResource("3_4fvwd")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(254, 112, 893, 112, 897, 409, 256, 407)
+polygon = PackedVector2Array(41, 29, 1112, 32, 1114, 607, 41, 596)
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_i32m7")
 script = ExtResource("5_cfryh")
 
+[node name="MouseThrough" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_76b0o")
+
+[node name="Language_English" type="Button" parent="."]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 406.0
+offset_right = 404.0
+offset_bottom = 453.0
+theme_override_colors/font_color = Color(0.694118, 0.423529, 0.466667, 1)
+text = "English"
+flat = true
+script = ExtResource("8_mc3v8")
+
+[node name="Language_CN" type="Button" parent="."]
+layout_mode = 0
+offset_left = 742.0
+offset_top = 406.0
+offset_right = 848.0
+offset_bottom = 453.0
+theme_override_colors/font_color = Color(0.694118, 0.423529, 0.466667, 1)
+text = "中文"
+flat = true
+script = ExtResource("9_anlyn")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -156.0
+offset_top = 111.0
+offset_right = 157.0
+offset_bottom = 149.0
+grow_horizontal = 2
+pivot_offset = Vector2(156, 19)
+theme_override_colors/font_color = Color(0.894118, 0.372549, 0.498039, 1)
+theme_override_fonts/font = ExtResource("8_luput")
+theme_override_font_sizes/font_size = 30
+text = "DokiDoki Desktop club"
+
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
+[connection signal="button_down" from="Language_English" to="Language_English" method="_on_button_down"]
+[connection signal="button_down" from="Language_CN" to="Language_CN" method="_on_button_down"]

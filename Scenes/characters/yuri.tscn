@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://cew0t7erof5td"]
+[gd_scene load_steps=76 format=3 uid="uid://cew0t7erof5td"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Yuri_penetrating.cs" id="1_6y0xp"]
 [ext_resource type="Texture2D" uid="uid://bwjeap5tcl01q" path="res://Assets/Textures/Character/y_sticker_1.png" id="2_2drgl"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" path="res://ai/tasks/direction_change.cs" id="7_wfokl"]
 [ext_resource type="Script" path="res://Scripts/characters/dialogic_Yuri.gd" id="8_154hc"]
 [ext_resource type="PackedScene" uid="uid://bjvx77mes6ufw" path="res://Scenes/UI/first_game_window_prompt.tscn" id="9_hek65"]
+[ext_resource type="Script" path="res://Scripts/UI/mouse_through.gd" id="10_r843k"]
+[ext_resource type="Script" path="res://Scripts/data/dialogic_var_set.gd" id="11_b5l8r"]
 
 [sub_resource type="Animation" id="Animation_4ti7m"]
 length = 0.001
@@ -51,34 +53,10 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Polygon2D:polygon")
+tracks/3/path = NodePath("Character_jump:process_mode")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [PackedVector2Array(523, 390, 516, 358, 518, 318, 562, 288, 618, 297, 637, 339, 628, 386, 644, 425, 620, 457, 565, 465, 531, 455, 513, 423)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("movements:character_direction")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Character_jump:process_mode")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -167,50 +145,50 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Polygon2D:polygon")
+tracks/2/path = NodePath("TextureRect:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [PackedVector2Array(343, 517, 339, 422, 343, 216, 539, 200, 626, 198, 933, 181, 905, 387, 911, 515, 742, 512, 658, 512, 562, 509, 496, 503)]
+"values": [Vector2(1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("TextureRect:scale")
+tracks/3/path = NodePath("movements:character_direction")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
+"update": 1,
+"values": [true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("movements:character_direction")
+tracks/4/path = NodePath("TextureRect:pivot_offset")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(56, 29.24)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("TextureRect:pivot_offset")
+tracks/5/path = NodePath("Character_jump:process_mode")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(56, 29.24)]
+"update": 1,
+"values": [4]
 }
 
 [sub_resource type="Animation" id="Animation_2u3uh"]
@@ -271,34 +249,22 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Polygon2D:polygon")
+tracks/3/path = NodePath("Character_jump:process_mode")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [PackedVector2Array(523, 390, 516, 358, 518, 318, 562, 288, 618, 297, 637, 339, 628, 386, 644, 425, 620, 457, 565, 465, 531, 455, 513, 423)]
+"update": 1,
+"values": [0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Character_jump:process_mode")
+tracks/4/path = NodePath("TextureRect:pivot_offset")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("TextureRect:pivot_offset")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -334,194 +300,187 @@ _data = {
 [sub_resource type="Animation" id="Animation_khih8"]
 resource_name = "Speak"
 length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Polygon2D:polygon")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [PackedVector2Array(502, 288, 534, 124, 911, 124, 908, 297, 686, 318, 663, 445, 589, 469, 501, 457)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_abjfl"]
 _data = {
 "Speak": SubResource("Animation_khih8")
 }
 
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_cwdv2"]
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_ib522"]
 
-[sub_resource type="BTAction" id="BTAction_lfjrm"]
-script = ExtResource("6_4v7kj")
-
-[sub_resource type="BBNode" id="BBNode_7sra1"]
-resource_name = "AnimationPlayer"
-saved_value = NodePath("AnimationPlayer")
-
-[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_bm2b5"]
-animation_player = SubResource("BBNode_7sra1")
-animation_name = &"right"
-
-[sub_resource type="BTProbability" id="BTProbability_66nvr"]
-children = [SubResource("BTPlayAnimation_bm2b5")]
-run_chance = 0.3
-
-[sub_resource type="BTAction" id="BTAction_8p6m5"]
-script = ExtResource("7_wfokl")
-
-[sub_resource type="BTWait" id="BTWait_ihb8x"]
-
-[sub_resource type="BTAction" id="BTAction_4i8iq"]
-script = ExtResource("6_4v7kj")
-
-[sub_resource type="BTWait" id="BTWait_es5y2"]
+[sub_resource type="BTWait" id="BTWait_pekij"]
 duration = 0.5
 
-[sub_resource type="BBNode" id="BBNode_y14hb"]
-resource_name = "movements"
-saved_value = NodePath("movements")
+[sub_resource type="BTAlwaysFail" id="BTAlwaysFail_3vswu"]
+children = [SubResource("BTWait_pekij")]
 
-[sub_resource type="BTCallMethod" id="BTCallMethod_33uuk"]
-node = SubResource("BBNode_y14hb")
-method = &"jump_right"
-
-[sub_resource type="BTFail" id="BTFail_qkcd4"]
-
-[sub_resource type="BTComment" id="BTComment_j7acg"]
-custom_name = "如果方向为左，百分之三十变右.1秒后向右跳动"
-
-[sub_resource type="BTSequence" id="BTSequence_0ypkk"]
-custom_name = "direction_change"
-children = [SubResource("BTAction_lfjrm"), SubResource("BTProbability_66nvr"), SubResource("BTAction_8p6m5"), SubResource("BTWait_ihb8x"), SubResource("BTAction_4i8iq"), SubResource("BTWait_es5y2"), SubResource("BTCallMethod_33uuk"), SubResource("BTFail_qkcd4"), SubResource("BTComment_j7acg")]
-
-[sub_resource type="BTAction" id="BTAction_nyplu"]
+[sub_resource type="BTAction" id="BTAction_83ina"]
 script = ExtResource("6_4v7kj")
 
-[sub_resource type="BTInvert" id="BTInvert_22hw2"]
-children = [SubResource("BTAction_nyplu")]
-
-[sub_resource type="BBNode" id="BBNode_8etus"]
+[sub_resource type="BBNode" id="BBNode_vhuhy"]
 resource_name = "AnimationPlayer"
 saved_value = NodePath("AnimationPlayer")
 
-[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_ophti"]
-animation_player = SubResource("BBNode_8etus")
-animation_name = &"left"
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_44dgt"]
+animation_player = SubResource("BBNode_vhuhy")
+animation_name = &"right"
 
-[sub_resource type="BTProbability" id="BTProbability_q6o1m"]
-children = [SubResource("BTPlayAnimation_ophti")]
+[sub_resource type="BTProbability" id="BTProbability_eioml"]
+children = [SubResource("BTPlayAnimation_44dgt")]
 run_chance = 0.3
 
-[sub_resource type="BTAction" id="BTAction_sahwt"]
+[sub_resource type="BTAction" id="BTAction_31l1l"]
 script = ExtResource("7_wfokl")
 
-[sub_resource type="BTWait" id="BTWait_upi6l"]
+[sub_resource type="BTWait" id="BTWait_pdo20"]
 
-[sub_resource type="BTAction" id="BTAction_tio44"]
+[sub_resource type="BTAction" id="BTAction_iwra8"]
 script = ExtResource("6_4v7kj")
 
-[sub_resource type="BTInvert" id="BTInvert_5d7h8"]
-children = [SubResource("BTAction_tio44")]
+[sub_resource type="BTInvert" id="BTInvert_sf2pm"]
+children = [SubResource("BTAction_iwra8")]
 
-[sub_resource type="BBNode" id="BBNode_co3rk"]
+[sub_resource type="BTWait" id="BTWait_a52hj"]
+duration = 0.5
+
+[sub_resource type="BBNode" id="BBNode_683bv"]
 resource_name = "movements"
 saved_value = NodePath("movements")
 
-[sub_resource type="BTCallMethod" id="BTCallMethod_cda0v"]
-node = SubResource("BBNode_co3rk")
-method = &"jump_left"
-
-[sub_resource type="BTFail" id="BTFail_gml2i"]
-
-[sub_resource type="BTComment" id="BTComment_2upcn"]
-custom_name = "如果方向为右，百分之三十变左.1秒后向左跳动"
-
-[sub_resource type="BTSequence" id="BTSequence_ssdnn"]
-custom_name = "direction_change"
-children = [SubResource("BTInvert_22hw2"), SubResource("BTProbability_q6o1m"), SubResource("BTAction_sahwt"), SubResource("BTWait_upi6l"), SubResource("BTInvert_5d7h8"), SubResource("BTCallMethod_cda0v"), SubResource("BTFail_gml2i"), SubResource("BTComment_2upcn")]
-
-[sub_resource type="BTWait" id="BTWait_83jny"]
-
-[sub_resource type="BTProbability" id="BTProbability_h2leq"]
-children = [SubResource("BTWait_83jny")]
-run_chance = 0.3
-
-[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_ikm7m"]
-children = [SubResource("BTProbability_h2leq")]
-
-[sub_resource type="BTFail" id="BTFail_fthyb"]
-
-[sub_resource type="BTComment" id="BTComment_ktjwx"]
-custom_name = "概率等待"
-
-[sub_resource type="BTSequence" id="BTSequence_yecp6"]
-custom_name = "Standby"
-children = [SubResource("BTAlwaysSucceed_ikm7m"), SubResource("BTFail_fthyb"), SubResource("BTComment_ktjwx")]
-
-[sub_resource type="BTAction" id="BTAction_m7uvl"]
-script = ExtResource("6_4v7kj")
-
-[sub_resource type="BBNode" id="BBNode_io3rs"]
-resource_name = "movements"
-saved_value = NodePath("movements")
-
-[sub_resource type="BTCallMethod" id="BTCallMethod_drp53"]
-node = SubResource("BBNode_io3rs")
-method = &"jump_left"
-
-[sub_resource type="BTProbability" id="BTProbability_qqqhx"]
-children = [SubResource("BTCallMethod_drp53")]
-run_chance = 0.7
-
-[sub_resource type="BTFail" id="BTFail_3mfvy"]
-
-[sub_resource type="BTComment" id="BTComment_ki47y"]
-custom_name = "如果方向为左，百分之五十向左跳跃"
-
-[sub_resource type="BTSequence" id="BTSequence_vd8m0"]
-custom_name = "jump_left"
-children = [SubResource("BTAction_m7uvl"), SubResource("BTProbability_qqqhx"), SubResource("BTFail_3mfvy"), SubResource("BTComment_ki47y")]
-
-[sub_resource type="BTAction" id="BTAction_enbgl"]
-script = ExtResource("6_4v7kj")
-
-[sub_resource type="BTInvert" id="BTInvert_p8718"]
-children = [SubResource("BTAction_enbgl")]
-
-[sub_resource type="BBNode" id="BBNode_xlpoj"]
-resource_name = "movements"
-saved_value = NodePath("movements")
-
-[sub_resource type="BTCallMethod" id="BTCallMethod_neywt"]
-node = SubResource("BBNode_xlpoj")
+[sub_resource type="BTCallMethod" id="BTCallMethod_g1cc7"]
+node = SubResource("BBNode_683bv")
 method = &"jump_right"
 
-[sub_resource type="BTProbability" id="BTProbability_ceimf"]
-children = [SubResource("BTCallMethod_neywt")]
+[sub_resource type="BTFail" id="BTFail_ugxsj"]
+
+[sub_resource type="BTComment" id="BTComment_dexcq"]
+custom_name = "如果方向为左，百分之三十变右.1秒后向右跳动"
+
+[sub_resource type="BTSequence" id="BTSequence_xllfu"]
+custom_name = "direction_change"
+children = [SubResource("BTAction_83ina"), SubResource("BTProbability_eioml"), SubResource("BTAction_31l1l"), SubResource("BTWait_pdo20"), SubResource("BTInvert_sf2pm"), SubResource("BTWait_a52hj"), SubResource("BTCallMethod_g1cc7"), SubResource("BTFail_ugxsj"), SubResource("BTComment_dexcq")]
+
+[sub_resource type="BTAction" id="BTAction_gw37f"]
+script = ExtResource("6_4v7kj")
+
+[sub_resource type="BTInvert" id="BTInvert_anmgy"]
+children = [SubResource("BTAction_gw37f")]
+
+[sub_resource type="BBNode" id="BBNode_6fifo"]
+resource_name = "AnimationPlayer"
+saved_value = NodePath("AnimationPlayer")
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_jsghk"]
+animation_player = SubResource("BBNode_6fifo")
+animation_name = &"left"
+
+[sub_resource type="BTProbability" id="BTProbability_2q8y4"]
+children = [SubResource("BTPlayAnimation_jsghk")]
+run_chance = 0.3
+
+[sub_resource type="BTAction" id="BTAction_2oj8u"]
+script = ExtResource("7_wfokl")
+
+[sub_resource type="BTWait" id="BTWait_nlgt2"]
+
+[sub_resource type="BTAction" id="BTAction_wx7l3"]
+script = ExtResource("6_4v7kj")
+
+[sub_resource type="BBNode" id="BBNode_8m50a"]
+resource_name = "movements"
+saved_value = NodePath("movements")
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_rkw8u"]
+node = SubResource("BBNode_8m50a")
+method = &"jump_left"
+
+[sub_resource type="BTFail" id="BTFail_i34o3"]
+
+[sub_resource type="BTComment" id="BTComment_0kufm"]
+custom_name = "如果方向为右，百分之三十变左.1秒后向左跳动"
+
+[sub_resource type="BTSequence" id="BTSequence_4ho5m"]
+custom_name = "direction_change"
+children = [SubResource("BTInvert_anmgy"), SubResource("BTProbability_2q8y4"), SubResource("BTAction_2oj8u"), SubResource("BTWait_nlgt2"), SubResource("BTAction_wx7l3"), SubResource("BTCallMethod_rkw8u"), SubResource("BTFail_i34o3"), SubResource("BTComment_0kufm")]
+
+[sub_resource type="BTWait" id="BTWait_3fg2x"]
+
+[sub_resource type="BTProbability" id="BTProbability_fjpkv"]
+children = [SubResource("BTWait_3fg2x")]
+run_chance = 0.3
+
+[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_eso3o"]
+children = [SubResource("BTProbability_fjpkv")]
+
+[sub_resource type="BTFail" id="BTFail_3uhhr"]
+
+[sub_resource type="BTComment" id="BTComment_kl32n"]
+custom_name = "概率等待"
+
+[sub_resource type="BTSequence" id="BTSequence_rlpet"]
+custom_name = "Standby"
+children = [SubResource("BTAlwaysSucceed_eso3o"), SubResource("BTFail_3uhhr"), SubResource("BTComment_kl32n")]
+
+[sub_resource type="BTAction" id="BTAction_cr3tk"]
+script = ExtResource("6_4v7kj")
+
+[sub_resource type="BBNode" id="BBNode_wxmj3"]
+resource_name = "movements"
+saved_value = NodePath("movements")
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_73qah"]
+node = SubResource("BBNode_wxmj3")
+method = &"jump_left"
+
+[sub_resource type="BTProbability" id="BTProbability_yw0je"]
+children = [SubResource("BTCallMethod_73qah")]
 run_chance = 0.7
 
-[sub_resource type="BTFail" id="BTFail_yp2t8"]
+[sub_resource type="BTFail" id="BTFail_8bs5c"]
 
-[sub_resource type="BTComment" id="BTComment_7kiae"]
+[sub_resource type="BTComment" id="BTComment_j5rwu"]
+custom_name = "如果方向为左，百分之五十向左跳跃"
+
+[sub_resource type="BTSequence" id="BTSequence_8w3id"]
+custom_name = "jump_left"
+children = [SubResource("BTAction_cr3tk"), SubResource("BTProbability_yw0je"), SubResource("BTFail_8bs5c"), SubResource("BTComment_j5rwu")]
+
+[sub_resource type="BTAction" id="BTAction_56asw"]
+script = ExtResource("6_4v7kj")
+
+[sub_resource type="BTInvert" id="BTInvert_bx38s"]
+children = [SubResource("BTAction_56asw")]
+
+[sub_resource type="BBNode" id="BBNode_wxlyw"]
+resource_name = "movements"
+saved_value = NodePath("movements")
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_v2ufm"]
+node = SubResource("BBNode_wxlyw")
+method = &"jump_right"
+
+[sub_resource type="BTProbability" id="BTProbability_r00ws"]
+children = [SubResource("BTCallMethod_v2ufm")]
+
+[sub_resource type="BTFail" id="BTFail_0j07t"]
+
+[sub_resource type="BTComment" id="BTComment_c4am6"]
 custom_name = "如果方向为右，百分之五十向右跳跃"
 
-[sub_resource type="BTSequence" id="BTSequence_l0mtm"]
+[sub_resource type="BTSequence" id="BTSequence_l6apf"]
 custom_name = "jump_right"
-children = [SubResource("BTInvert_p8718"), SubResource("BTProbability_ceimf"), SubResource("BTFail_yp2t8"), SubResource("BTComment_7kiae")]
+children = [SubResource("BTInvert_bx38s"), SubResource("BTProbability_r00ws"), SubResource("BTFail_0j07t"), SubResource("BTComment_c4am6")]
 
-[sub_resource type="BTWait" id="BTWait_273nf"]
+[sub_resource type="BTWait" id="BTWait_5ql8k"]
 
-[sub_resource type="BTSelector" id="BTSelector_ryjcr"]
-children = [SubResource("BTSequence_0ypkk"), SubResource("BTSequence_ssdnn"), SubResource("BTSequence_yecp6"), SubResource("BTSequence_vd8m0"), SubResource("BTSequence_l0mtm"), SubResource("BTWait_273nf")]
+[sub_resource type="BTSelector" id="BTSelector_p2h13"]
+children = [SubResource("BTAlwaysFail_3vswu"), SubResource("BTSequence_xllfu"), SubResource("BTSequence_4ho5m"), SubResource("BTSequence_rlpet"), SubResource("BTSequence_8w3id"), SubResource("BTSequence_l6apf"), SubResource("BTWait_5ql8k")]
 
-[sub_resource type="BehaviorTree" id="BehaviorTree_2httu"]
-blackboard_plan = SubResource("BlackboardPlan_cwdv2")
-root_task = SubResource("BTSelector_ryjcr")
+[sub_resource type="BehaviorTree" id="BehaviorTree_1bpvk"]
+blackboard_plan = SubResource("BlackboardPlan_ib522")
+root_task = SubResource("BTSelector_p2h13")
 
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_cwxew"]
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_b7ymf"]
 
 [node name="Yuri" type="Control"]
 layout_mode = 3
@@ -556,10 +515,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_vh063")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(523, 390, 516, 358, 518, 318, 562, 288, 618, 297, 637, 339, 628, 386, 644, 425, 620, 457, 565, 465, 531, 455, 513, 423)
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_rboqg")
@@ -573,10 +528,6 @@ libraries = {
 [node name="mouse_move" type="Node2D" parent="."]
 script = ExtResource("5_gwxm6")
 
-[node name="Character_jump" type="BTPlayer" parent="."]
-behavior_tree = SubResource("BehaviorTree_2httu")
-blackboard_plan = SubResource("BlackboardPlan_cwxew")
-
 [node name="Dialogic" type="Node2D" parent="."]
 script = ExtResource("8_154hc")
 
@@ -584,6 +535,24 @@ script = ExtResource("8_154hc")
 position = Vector2(609, 317)
 
 [node name="First Game Window Prompt" parent="." instance=ExtResource("9_hek65")]
+
+[node name="MouseThrough" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_r843k")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(30, 26, 1117, 20, 1107, 603, 48, 614)
+
+[node name="Character_jump" type="BTPlayer" parent="."]
+behavior_tree = SubResource("BehaviorTree_1bpvk")
+blackboard_plan = SubResource("BlackboardPlan_b7ymf")
+
+[node name="Dialogic_var_set" type="Node" parent="."]
+script = ExtResource("11_b5l8r")
 
 [connection signal="focus_entered" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_entered"]
 [connection signal="focus_exited" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_exited"]
