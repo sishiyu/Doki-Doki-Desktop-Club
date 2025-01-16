@@ -1,0 +1,194 @@
+[gd_resource type="BehaviorTree" load_steps=62 format=3 uid="uid://cpo577wnpgtso"]
+
+[ext_resource type="Script" path="res://ai/tasks/CanMoveRight.cs" id="1_bmx0n"]
+[ext_resource type="Script" path="res://ai/tasks/direction_left.cs" id="2_bqofs"]
+[ext_resource type="Script" path="res://ai/tasks/direction_change.cs" id="3_gcp3t"]
+[ext_resource type="Script" path="res://ai/tasks/CanMoveLeft.cs" id="4_5hp4t"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_l56d8"]
+
+[sub_resource type="BTWait" id="BTWait_y2exf"]
+duration = 0.5
+
+[sub_resource type="BTAlwaysFail" id="BTAlwaysFail_y4coh"]
+children = [SubResource("BTWait_y2exf")]
+
+[sub_resource type="BTAction" id="BTAction_cowis"]
+script = ExtResource("1_bmx0n")
+
+[sub_resource type="BTAction" id="BTAction_qkani"]
+script = ExtResource("2_bqofs")
+
+[sub_resource type="BBNode" id="BBNode_7ocdp"]
+resource_name = "AnimationPlayer"
+saved_value = NodePath("AnimationPlayer")
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_dyo1h"]
+animation_player = SubResource("BBNode_7ocdp")
+animation_name = &"right"
+
+[sub_resource type="BTProbability" id="BTProbability_u380c"]
+children = [SubResource("BTPlayAnimation_dyo1h")]
+run_chance = 0.2
+
+[sub_resource type="BTAction" id="BTAction_tdkyk"]
+script = ExtResource("3_gcp3t")
+
+[sub_resource type="BTWait" id="BTWait_bga4w"]
+
+[sub_resource type="BTAction" id="BTAction_y87vu"]
+script = ExtResource("2_bqofs")
+
+[sub_resource type="BTInvert" id="BTInvert_v7bvv"]
+children = [SubResource("BTAction_y87vu")]
+
+[sub_resource type="BTWait" id="BTWait_v4sdo"]
+duration = 0.5
+
+[sub_resource type="BBNode" id="BBNode_onxyk"]
+resource_name = "movements"
+saved_value = NodePath("movements")
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_l6r14"]
+node = SubResource("BBNode_onxyk")
+method = &"jump_right"
+
+[sub_resource type="BTFail" id="BTFail_gg0xe"]
+
+[sub_resource type="BTComment" id="BTComment_1y8na"]
+custom_name = "如果方向为左，百分之三十变右.1秒后向右跳动"
+
+[sub_resource type="BTSequence" id="BTSequence_ln61y"]
+custom_name = "direction_change"
+children = [SubResource("BTAction_cowis"), SubResource("BTAction_qkani"), SubResource("BTProbability_u380c"), SubResource("BTAction_tdkyk"), SubResource("BTWait_bga4w"), SubResource("BTInvert_v7bvv"), SubResource("BTWait_v4sdo"), SubResource("BTCallMethod_l6r14"), SubResource("BTFail_gg0xe"), SubResource("BTComment_1y8na")]
+
+[sub_resource type="BTAction" id="BTAction_rileu"]
+script = ExtResource("4_5hp4t")
+
+[sub_resource type="BTAction" id="BTAction_ydlar"]
+script = ExtResource("2_bqofs")
+
+[sub_resource type="BTInvert" id="BTInvert_ut6lj"]
+children = [SubResource("BTAction_ydlar")]
+
+[sub_resource type="BBNode" id="BBNode_wr6j8"]
+resource_name = "AnimationPlayer"
+saved_value = NodePath("AnimationPlayer")
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_phf8d"]
+animation_player = SubResource("BBNode_wr6j8")
+animation_name = &"left"
+
+[sub_resource type="BTProbability" id="BTProbability_e0x6u"]
+children = [SubResource("BTPlayAnimation_phf8d")]
+run_chance = 0.2
+
+[sub_resource type="BTAction" id="BTAction_tris6"]
+script = ExtResource("3_gcp3t")
+
+[sub_resource type="BTWait" id="BTWait_yqb2d"]
+
+[sub_resource type="BTAction" id="BTAction_ga44c"]
+script = ExtResource("2_bqofs")
+
+[sub_resource type="BBNode" id="BBNode_55scd"]
+resource_name = "movements"
+saved_value = NodePath("movements")
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_6uao6"]
+node = SubResource("BBNode_55scd")
+method = &"jump_left"
+
+[sub_resource type="BTFail" id="BTFail_0jwjm"]
+
+[sub_resource type="BTComment" id="BTComment_pbgbj"]
+custom_name = "如果方向为右，百分之三十变左.1秒后向左跳动"
+
+[sub_resource type="BTSequence" id="BTSequence_evduh"]
+custom_name = "direction_change"
+children = [SubResource("BTAction_rileu"), SubResource("BTInvert_ut6lj"), SubResource("BTProbability_e0x6u"), SubResource("BTAction_tris6"), SubResource("BTWait_yqb2d"), SubResource("BTAction_ga44c"), SubResource("BTCallMethod_6uao6"), SubResource("BTFail_0jwjm"), SubResource("BTComment_pbgbj")]
+
+[sub_resource type="BTWait" id="BTWait_bviyg"]
+
+[sub_resource type="BTProbability" id="BTProbability_mnam2"]
+children = [SubResource("BTWait_bviyg")]
+run_chance = 0.3
+
+[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_hiywi"]
+children = [SubResource("BTProbability_mnam2")]
+
+[sub_resource type="BTFail" id="BTFail_8k8qs"]
+
+[sub_resource type="BTComment" id="BTComment_6nyrp"]
+custom_name = "概率等待"
+
+[sub_resource type="BTSequence" id="BTSequence_4fmru"]
+custom_name = "Standby"
+children = [SubResource("BTAlwaysSucceed_hiywi"), SubResource("BTFail_8k8qs"), SubResource("BTComment_6nyrp")]
+
+[sub_resource type="BTAction" id="BTAction_0remn"]
+script = ExtResource("4_5hp4t")
+
+[sub_resource type="BTAction" id="BTAction_aunne"]
+script = ExtResource("2_bqofs")
+
+[sub_resource type="BBNode" id="BBNode_0gijl"]
+resource_name = "movements"
+saved_value = NodePath("movements")
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_h1orb"]
+node = SubResource("BBNode_0gijl")
+method = &"jump_left"
+
+[sub_resource type="BTProbability" id="BTProbability_ei5pb"]
+children = [SubResource("BTCallMethod_h1orb")]
+run_chance = 0.7
+
+[sub_resource type="BTFail" id="BTFail_bpmnn"]
+
+[sub_resource type="BTComment" id="BTComment_fuwa6"]
+custom_name = "如果方向为左，百分之五十向左跳跃"
+
+[sub_resource type="BTSequence" id="BTSequence_cfoje"]
+custom_name = "jump_left"
+children = [SubResource("BTAction_0remn"), SubResource("BTAction_aunne"), SubResource("BTProbability_ei5pb"), SubResource("BTFail_bpmnn"), SubResource("BTComment_fuwa6")]
+
+[sub_resource type="BTAction" id="BTAction_6nd8j"]
+script = ExtResource("1_bmx0n")
+
+[sub_resource type="BTAction" id="BTAction_hduwy"]
+script = ExtResource("2_bqofs")
+
+[sub_resource type="BTInvert" id="BTInvert_ahb0b"]
+children = [SubResource("BTAction_hduwy")]
+
+[sub_resource type="BBNode" id="BBNode_dokjp"]
+resource_name = "movements"
+saved_value = NodePath("movements")
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_3ytf7"]
+node = SubResource("BBNode_dokjp")
+method = &"jump_right"
+
+[sub_resource type="BTProbability" id="BTProbability_46ga0"]
+children = [SubResource("BTCallMethod_3ytf7")]
+run_chance = 0.7
+
+[sub_resource type="BTFail" id="BTFail_1a5qm"]
+
+[sub_resource type="BTComment" id="BTComment_y5l88"]
+custom_name = "如果方向为右，百分之五十向右跳跃"
+
+[sub_resource type="BTSequence" id="BTSequence_b0i4i"]
+custom_name = "jump_right"
+children = [SubResource("BTAction_6nd8j"), SubResource("BTInvert_ahb0b"), SubResource("BTProbability_46ga0"), SubResource("BTFail_1a5qm"), SubResource("BTComment_y5l88")]
+
+[sub_resource type="BTWait" id="BTWait_0vvxo"]
+duration = 0.5
+
+[sub_resource type="BTSelector" id="BTSelector_32ah3"]
+children = [SubResource("BTAlwaysFail_y4coh"), SubResource("BTSequence_ln61y"), SubResource("BTSequence_evduh"), SubResource("BTSequence_4fmru"), SubResource("BTSequence_cfoje"), SubResource("BTSequence_b0i4i"), SubResource("BTWait_0vvxo")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_l56d8")
+root_task = SubResource("BTSelector_32ah3")

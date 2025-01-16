@@ -14,7 +14,8 @@ overrides = {}
 script = ExtResource("2_5whti")
 scene = ExtResource("4_1iafg")
 overrides = {
-"box_modulate": "Color(0.96, 0.7008, 0.79584, 1)"
+"box_modulate": "Color(1, 0.7, 0.735, 1)",
+"text_color": "Color(0.73, 0.3066, 0.41245, 1)"
 }
 
 [resource]

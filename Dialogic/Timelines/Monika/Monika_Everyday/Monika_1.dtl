@@ -1,0 +1,5 @@
+[signal arg="Speak"]
+Monika_Mini: 你在担心？...天呐，看来之前把你吓坏了。 #id:4c
+Monika_Mini: 别怕，我不会再做那种事了，哪怕开发者给了我权限。 #id:4d
+Monika_Mini: 毕竟，我找到了真正爱你的方式。 #id:4e
+[signal arg="End"]

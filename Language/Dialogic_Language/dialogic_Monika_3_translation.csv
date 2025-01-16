@@ -1,0 +1,10 @@
+keys,zh_CN,en
+Text/6c/text,理想主义者，他们倾向于追求和相信更高的理想和目标，通常对现状不满足，渴望改变世界，或者提升个人和集体的精神、道德层次。,"Idealists tend to pursue and believe in higher ideals and goals, usually dissatisfied with the current state, yearning to change the world, or to elevate the spiritual and moral levels of individuals and society."
+Text/6d/text,听起来很厉害，很让人向往对吧？但许多理想主义者活得却很痛苦。,"Sounds impressive, right? Very inspiring, isn't it? But many idealists actually live in great pain."
+Text/6e/text,通往理想的道路上散布着许多巨石，需要一点一点地挖开。挖开一个又一个巨石，前方还有多少巨石，根本不得而知，他们只是依靠着那终点的光，一点点地前行。,"The road to ideals is scattered with many boulders, and each one needs to be dug through little by little. Digging through one boulder after another, no one knows how many more are ahead; they only move forward, relying on the light of the destination."
+Text/6f/text,还有许多人喜欢假冒理想主义者，来彰显自己的不平凡，甚至有些假冒者对于自己假冒行为还不自知。真不知道是可笑，还是可悲,"And many people like to pretend to be idealists, to show how extraordinary they are. Some of these pretenders don't even realize their own pretension. I don't know whether to laugh or to feel sorry."
+Text/70/text,那么，你是，或者说“你觉得”你是理想主义者吗？,"So, are you, or should I say, 'do you think' you're an idealist?"
+Choice/71/text,我是,"Yes,I am"
+Choice/71/disabled_text,,
+Choice/72/text,我不是,I'm not.
+Choice/72/disabled_text,,

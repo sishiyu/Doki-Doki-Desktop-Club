@@ -1,14 +1,14 @@
-[gd_scene load_steps=74 format=3 uid="uid://oyjh005vyqcv"]
+[gd_scene load_steps=21 format=3 uid="uid://oyjh005vyqcv"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Sayori_penetrating.cs" id="1_4w5oy"]
 [ext_resource type="Texture2D" uid="uid://bs7c7ht1qr80w" path="res://Assets/Textures/Character/s_sticker_1.png" id="2_rktmr"]
 [ext_resource type="Script" path="res://Scripts/characters/Movements.cs" id="3_a7wth"]
-[ext_resource type="Script" path="res://ai/tasks/direction_left.cs" id="4_genad"]
-[ext_resource type="Script" path="res://ai/tasks/direction_change.cs" id="5_rl2c4"]
 [ext_resource type="Texture2D" uid="uid://dqvgghwh2cn35" path="res://Assets/Textures/Character/s_sticker_2.png" id="6_csqus"]
 [ext_resource type="Script" path="res://Scripts/characters/MouseMove.cs" id="7_rc2bs"]
 [ext_resource type="Script" path="res://Scripts/characters/dialogic_Sayori.gd" id="8_40sai"]
 [ext_resource type="PackedScene" uid="uid://bjvx77mes6ufw" path="res://Scenes/UI/first_game_window_prompt.tscn" id="9_0txeq"]
+[ext_resource type="BehaviorTree" uid="uid://cpo577wnpgtso" path="res://ai/Tree/Character_Move.tres" id="9_4l6w1"]
+[ext_resource type="BehaviorTree" uid="uid://dxg1wb6vfbcs4" path="res://ai/Tree/Desktop_Everyday_dialog.tres" id="10_jftf1"]
 [ext_resource type="Script" path="res://Scripts/UI/mouse_through.gd" id="10_t2cf6"]
 [ext_resource type="Script" path="res://Scripts/data/dialogic_var_set.gd" id="11_dwmy4"]
 
@@ -24,7 +24,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(0.8, 0.8)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -53,30 +53,55 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Character_jump:process_mode")
+tracks/3/path = NodePath("TextureRect:pivot_offset")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(61, 23.32)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("TextureRect:pivot_offset")
+tracks/4/path = NodePath("TextureRect:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(61, 23.32)]
+"values": [Vector2(515, 292)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bubble_Position:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(554, 320)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("movements:character_direction")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_1li30"]
 resource_name = "Speak"
+length = 2.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -93,38 +118,38 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Character_jump:process_mode")
+tracks/1/path = NodePath("TextureRect:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(515, 292), Vector2(515, 270), Vector2(515, 292)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect:pivot_offset")
+tracks/2/path = NodePath("Bubble_Position:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(61, 162.12)]
+"values": [Vector2(554, 320), Vector2(554, 298), Vector2(554, 320)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("TextureRect:rotation")
+tracks/3/path = NodePath("TextureRect:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.233333, 0.5, 0.733333, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0523599, 0.0, -0.0523599, 0.0]
+"values": [Vector2(0.8, 0.8)]
 }
 
 [sub_resource type="Animation" id="Animation_5741r"]
@@ -164,7 +189,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(0.8, 0.8)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -190,18 +215,6 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(61, 23.32)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Character_jump:process_mode")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
 
 [sub_resource type="Animation" id="Animation_2u3uh"]
 resource_name = "left"
@@ -216,12 +229,13 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1, 1), Vector2(1, 1)]
+"values": [Vector2(-0.8, 0.8), Vector2(0.8, 0.8)]
 }
 
 [sub_resource type="Animation" id="Animation_c1hee"]
 resource_name = "recovery"
 length = 0.1
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -249,26 +263,64 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Character_jump:process_mode")
+tracks/2/path = NodePath("TextureRect:pivot_offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(61, 23.32)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("TextureRect:pivot_offset")
+tracks/3/path = NodePath("TextureRect:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(61, 23.32)]
+"values": [Vector2(0.8, 0.8)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("movements:character_direction")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Dialogic")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Speak_play"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(515, 292)]
 }
 
 [sub_resource type="Animation" id="Animation_gqt0v"]
@@ -284,7 +336,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(-1, 1)]
+"values": [Vector2(0.8, 0.8), Vector2(-0.8, 0.8)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rboqg"]
@@ -297,181 +349,9 @@ _data = {
 "right": SubResource("Animation_gqt0v")
 }
 
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_vb15t"]
-
-[sub_resource type="BTWait" id="BTWait_ingvt"]
-duration = 0.5
-
-[sub_resource type="BTAlwaysFail" id="BTAlwaysFail_effxs"]
-children = [SubResource("BTWait_ingvt")]
-
-[sub_resource type="BTAction" id="BTAction_syduk"]
-script = ExtResource("4_genad")
-
-[sub_resource type="BBNode" id="BBNode_5hfc5"]
-resource_name = "AnimationPlayer"
-saved_value = NodePath("AnimationPlayer")
-
-[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_amofu"]
-animation_player = SubResource("BBNode_5hfc5")
-animation_name = &"right"
-
-[sub_resource type="BTProbability" id="BTProbability_vewax"]
-children = [SubResource("BTPlayAnimation_amofu")]
-run_chance = 0.3
-
-[sub_resource type="BTAction" id="BTAction_57e8r"]
-script = ExtResource("5_rl2c4")
-
-[sub_resource type="BTWait" id="BTWait_ajusp"]
-
-[sub_resource type="BTAction" id="BTAction_px4hd"]
-script = ExtResource("4_genad")
-
-[sub_resource type="BTInvert" id="BTInvert_u1em7"]
-children = [SubResource("BTAction_px4hd")]
-
-[sub_resource type="BTWait" id="BTWait_3h6jo"]
-duration = 0.5
-
-[sub_resource type="BBNode" id="BBNode_3wjce"]
-resource_name = "movements"
-saved_value = NodePath("movements")
-
-[sub_resource type="BTCallMethod" id="BTCallMethod_rw2jh"]
-node = SubResource("BBNode_3wjce")
-method = &"jump_right"
-
-[sub_resource type="BTFail" id="BTFail_fkpb7"]
-
-[sub_resource type="BTComment" id="BTComment_70vql"]
-custom_name = "如果方向为左，百分之三十变右.1秒后向右跳动"
-
-[sub_resource type="BTSequence" id="BTSequence_214nu"]
-custom_name = "direction_change"
-children = [SubResource("BTAction_syduk"), SubResource("BTProbability_vewax"), SubResource("BTAction_57e8r"), SubResource("BTWait_ajusp"), SubResource("BTInvert_u1em7"), SubResource("BTWait_3h6jo"), SubResource("BTCallMethod_rw2jh"), SubResource("BTFail_fkpb7"), SubResource("BTComment_70vql")]
-
-[sub_resource type="BTAction" id="BTAction_gyfn5"]
-script = ExtResource("4_genad")
-
-[sub_resource type="BTInvert" id="BTInvert_h3tsv"]
-children = [SubResource("BTAction_gyfn5")]
-
-[sub_resource type="BBNode" id="BBNode_ha1eb"]
-resource_name = "AnimationPlayer"
-saved_value = NodePath("AnimationPlayer")
-
-[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_xd0eh"]
-animation_player = SubResource("BBNode_ha1eb")
-animation_name = &"left"
-
-[sub_resource type="BTProbability" id="BTProbability_rpxmt"]
-children = [SubResource("BTPlayAnimation_xd0eh")]
-run_chance = 0.3
-
-[sub_resource type="BTAction" id="BTAction_mar30"]
-script = ExtResource("5_rl2c4")
-
-[sub_resource type="BTWait" id="BTWait_xmcxy"]
-
-[sub_resource type="BTAction" id="BTAction_haswl"]
-script = ExtResource("4_genad")
-
-[sub_resource type="BBNode" id="BBNode_enfh8"]
-resource_name = "movements"
-saved_value = NodePath("movements")
-
-[sub_resource type="BTCallMethod" id="BTCallMethod_r8hi8"]
-node = SubResource("BBNode_enfh8")
-method = &"jump_left"
-
-[sub_resource type="BTFail" id="BTFail_vt03k"]
-
-[sub_resource type="BTComment" id="BTComment_kesn6"]
-custom_name = "如果方向为右，百分之三十变左.1秒后向左跳动"
-
-[sub_resource type="BTSequence" id="BTSequence_nk0ys"]
-custom_name = "direction_change"
-children = [SubResource("BTInvert_h3tsv"), SubResource("BTProbability_rpxmt"), SubResource("BTAction_mar30"), SubResource("BTWait_xmcxy"), SubResource("BTAction_haswl"), SubResource("BTCallMethod_r8hi8"), SubResource("BTFail_vt03k"), SubResource("BTComment_kesn6")]
-
-[sub_resource type="BTWait" id="BTWait_jdu86"]
-
-[sub_resource type="BTProbability" id="BTProbability_ost7a"]
-children = [SubResource("BTWait_jdu86")]
-run_chance = 0.3
-
-[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_p0xqh"]
-children = [SubResource("BTProbability_ost7a")]
-
-[sub_resource type="BTFail" id="BTFail_2wjnd"]
-
-[sub_resource type="BTComment" id="BTComment_slx6b"]
-custom_name = "概率等待"
-
-[sub_resource type="BTSequence" id="BTSequence_damju"]
-custom_name = "Standby"
-children = [SubResource("BTAlwaysSucceed_p0xqh"), SubResource("BTFail_2wjnd"), SubResource("BTComment_slx6b")]
-
-[sub_resource type="BTAction" id="BTAction_hd0cs"]
-script = ExtResource("4_genad")
-
-[sub_resource type="BBNode" id="BBNode_dwybc"]
-resource_name = "movements"
-saved_value = NodePath("movements")
-
-[sub_resource type="BTCallMethod" id="BTCallMethod_y8j5s"]
-node = SubResource("BBNode_dwybc")
-method = &"jump_left"
-
-[sub_resource type="BTProbability" id="BTProbability_smdgi"]
-children = [SubResource("BTCallMethod_y8j5s")]
-run_chance = 0.7
-
-[sub_resource type="BTFail" id="BTFail_uk8u7"]
-
-[sub_resource type="BTComment" id="BTComment_byfju"]
-custom_name = "如果方向为左，百分之五十向左跳跃"
-
-[sub_resource type="BTSequence" id="BTSequence_vjpyx"]
-custom_name = "jump_left"
-children = [SubResource("BTAction_hd0cs"), SubResource("BTProbability_smdgi"), SubResource("BTFail_uk8u7"), SubResource("BTComment_byfju")]
-
-[sub_resource type="BTAction" id="BTAction_kjhl0"]
-script = ExtResource("4_genad")
-
-[sub_resource type="BTInvert" id="BTInvert_5yr8i"]
-children = [SubResource("BTAction_kjhl0")]
-
-[sub_resource type="BBNode" id="BBNode_g1l77"]
-resource_name = "movements"
-saved_value = NodePath("movements")
-
-[sub_resource type="BTCallMethod" id="BTCallMethod_1s8jb"]
-node = SubResource("BBNode_g1l77")
-method = &"jump_right"
-
-[sub_resource type="BTProbability" id="BTProbability_s0svs"]
-children = [SubResource("BTCallMethod_1s8jb")]
-
-[sub_resource type="BTFail" id="BTFail_08ce0"]
-
-[sub_resource type="BTComment" id="BTComment_7i725"]
-custom_name = "如果方向为右，百分之五十向右跳跃"
-
-[sub_resource type="BTSequence" id="BTSequence_8l3x2"]
-custom_name = "jump_right"
-children = [SubResource("BTInvert_5yr8i"), SubResource("BTProbability_s0svs"), SubResource("BTFail_08ce0"), SubResource("BTComment_7i725")]
-
-[sub_resource type="BTWait" id="BTWait_nwja8"]
-
-[sub_resource type="BTSelector" id="BTSelector_g1a06"]
-children = [SubResource("BTAlwaysFail_effxs"), SubResource("BTSequence_214nu"), SubResource("BTSequence_nk0ys"), SubResource("BTSequence_damju"), SubResource("BTSequence_vjpyx"), SubResource("BTSequence_8l3x2"), SubResource("BTWait_nwja8")]
-
-[sub_resource type="BehaviorTree" id="BehaviorTree_t3uwe"]
-blackboard_plan = SubResource("BlackboardPlan_vb15t")
-root_task = SubResource("BTSelector_g1a06")
-
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_ogrgv"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_iweq1"]
 
 [node name="Sayori" type="Control"]
 layout_mode = 3
@@ -495,6 +375,7 @@ offset_right = 61.0
 offset_bottom = 141.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8, 0.8)
 pivot_offset = Vector2(61, 23.32)
 focus_mode = 1
 texture = ExtResource("2_rktmr")
@@ -510,14 +391,16 @@ libraries = {
 "": SubResource("AnimationLibrary_rboqg")
 }
 
-[node name="mouse_move" type="Node2D" parent="."]
+[node name="mouse_move" type="Node2D" parent="." node_paths=PackedStringArray("Dialogic_data")]
 script = ExtResource("7_rc2bs")
+Dialogic_data = NodePath("../Dialogic_data")
 
-[node name="Dialogic" type="Node2D" parent="."]
+[node name="Dialogic" type="Node2D" parent="." node_paths=PackedStringArray("Dialogic_data")]
 script = ExtResource("8_40sai")
+Dialogic_data = NodePath("../Dialogic_data")
 
 [node name="Bubble_Position" type="Marker2D" parent="."]
-position = Vector2(613, 322)
+position = Vector2(554, 320)
 
 [node name="First Game Window Prompt" parent="." instance=ExtResource("9_0txeq")]
 
@@ -534,11 +417,17 @@ color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(22.5828, 15.9857, 1116.11, 11.3027, 1116.11, 564.838, 28.7493, 562.965)
 
 [node name="Character_jump" type="BTPlayer" parent="."]
-behavior_tree = SubResource("BehaviorTree_t3uwe")
+behavior_tree = ExtResource("9_4l6w1")
 blackboard_plan = SubResource("BlackboardPlan_ogrgv")
 
-[node name="Dialogic_var_set" type="Node" parent="."]
+[node name="Everyday_Dialog" type="BTPlayer" parent="."]
+behavior_tree = ExtResource("10_jftf1")
+blackboard_plan = SubResource("BlackboardPlan_iweq1")
+
+[node name="Dialogic_data" type="Node" parent="." node_paths=PackedStringArray("jumpAI", "dialogAI")]
 script = ExtResource("11_dwmy4")
+jumpAI = NodePath("../Character_jump")
+dialogAI = NodePath("../Everyday_Dialog")
 
 [connection signal="focus_entered" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_entered"]
 [connection signal="focus_exited" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_exited"]

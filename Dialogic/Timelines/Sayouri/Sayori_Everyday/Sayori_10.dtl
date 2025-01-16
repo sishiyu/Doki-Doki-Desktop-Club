@@ -1,0 +1,15 @@
+[signal arg="Speak"]
+[music path="res://Assets/Audios/BGM/5_sayori.ogg" fade="2.0" volume="0.0"]
+Sayori_Mini: 清晨你透过梦境照亮我的世界,\
+似乎在传达对我的思念。 #id:22
+Sayori_Mini: 亲吻前额促我坐起,\
+帮我擦去睡意。 #id:23
+Sayori_Mini: 你想让我出门游逛？\
+还是鼓励我拭去阴云？ #id:24
+Sayori_Mini: 我抬起头，见碧空如洗。\
+这是个秘密，而我信任你。 #id:25
+Sayori_Mini: 若不是因为你，我将可以长眠 #id:26
+Sayori_Mini: 但，我没疯...该去做早饭了。 #id:27
+Sayori_Mini: 还记得这首诗吗？是你刚加入文学部的时候我给你看的第一首诗！ #id:28
+Sayori_Mini: 当时前一天晚上忘了写，早上起来才写的哈哈哈。 #id:29
+[signal arg="End"]

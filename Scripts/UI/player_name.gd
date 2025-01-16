@@ -8,10 +8,13 @@ extends Control
 func _ready() -> void:
 	DisplayServer.window_set_mouse_passthrough(polygon_2d.polygon)
 	if(get_node("/root/AutoLoadData").get("playerName") == "" or get_node("/root/AutoLoadData").get("playerName") == null):
-		var layout = Dialogic.start("Player_Name")#播放问候对话
-		layout.register_character(Dialogic_System_path,$Bubble_Position)#设置对话位
+		Player_Name_System()
 	
 
+func Player_Name_System():#播放system对话
+	var layout = Dialogic.start("Player_Name")#播放问候对话
+	layout.register_character(Dialogic_System_path,$Bubble_Position)#设置对话位
+	
 
 
 func End_timeLine():

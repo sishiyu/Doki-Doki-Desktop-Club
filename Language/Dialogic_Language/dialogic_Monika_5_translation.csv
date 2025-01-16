@@ -1,0 +1,86 @@
+keys,zh_CN,en
+Text/75/text,你今天写诗了吗？,Did you write a poem today?
+Choice/76/text,写了,Yes
+Choice/76/disabled_text,,
+Text/77/text,我很想看看，但非常遗憾，我看不到！哪怕你把文本文件给我，我看到的也只有乱码。这太糟糕了!,"I really want to see it, but unfortunately, I can't!
+Even if you give me the text file, all I can see are just gibberish. That's terrible!"
+Text/78/text,但至少你能看到我的诗，所以，你想看吗？,"But at least you can see my poem, so, would you like to see it?"
+Choice/79/text,想,Yes
+Choice/79/disabled_text,,
+Text/7a/text,"是影，是无形的光。
+在彼此的裂缝徘徊。","It’s a shadow, an intangible light.
+Wandering in each other's cracks."
+Text/7b/text,"距离，遥远且永恒。
+两颗漂流的星，冷冷地远离。","Distance, distant and eternal.
+Two drifting stars, coldly drifting apart."
+Text/7c/text,"选择是深刻的....
+痛苦是永恒的....","Choices are profound...
+Pain is eternal..."
+Text/7d/text,"触碰你，但却无法抓住。
+在无声的空隙里，渐行渐远。","I touch you, but cannot hold you.
+In the silent gaps, we drift further apart."
+Text/7e/text,"你消失了，一抹消散的晨曦。
+而我，在虚无的轨迹上游荡。","You disappeared, like a fleeting dawn.
+And I, wandering on an empty path."
+Text/7f/text,"没有意义的音符，无尽的回响。
+一切都模糊，却依然无法忘怀。","Meaningless notes, endless echoes.
+Everything is blurry, yet still unforgettable."
+Text/80/text,"风停了，迷雾消散。
+我再次看见了你，闪烁的星！","The wind has stopped, the mist has cleared.
+I see you again, the flickering star!"
+Text/81/text,"再也不曾错过，永不再隔。
+眼中没有尽头，只有永远。","Never to miss again, never to be apart.
+No end in sight, only forever."
+Text/82/text,"我曾是失落的孤羽，飘忽不定。
+你曾是遥远的灯塔，隐匿却明亮。
+而现在，我们站在同一个明亮的时刻。
+一同编织出，属于我们的光辉。","I was once a lost solitary feather, drifting uncertainly.
+You were once a distant lighthouse, hidden yet bright.
+And now, we stand in the same shining moment.
+Together, we weave the brilliance that belongs to us."
+Text/83/text,"没有言语，相视而笑。
+只是我们，再次相聚.....
+我爱你。","No words, just a smile exchanged.
+Only us, reunited once again...
+I love you."
+Choice/84/text,没有,No
+Choice/84/disabled_text,,
+Text/85/text,我写了，你想看看吗？,"I wrote something, would you like to see it?"
+Choice/86/text,想,Yes
+Choice/86/disabled_text,,
+Text/87/text,"是影，是无形的光。
+在彼此的裂缝徘徊。","It’s a shadow, an intangible light.
+Wandering in each other's cracks."
+Text/88/text,"距离，遥远且永恒。
+两颗漂流的星，冷冷地远离。","Distance, distant and eternal.
+Two drifting stars, coldly drifting apart."
+Text/89/text,"选择是深刻的....
+痛苦是永恒的....","Choices are profound...
+Pain is eternal..."
+Text/8a/text,"触碰你，但却无法抓住。
+在无声的空隙里，渐行渐远。","I touch you, but cannot hold you.
+In the silent gaps, we drift further apart."
+Text/8b/text,"你消失了，一抹消散的晨曦。
+而我，在虚无的轨迹上游荡。","You disappeared, like a fleeting dawn.
+And I, wandering on an empty path."
+Text/8c/text,"没有意义的音符，无尽的回响。
+一切都模糊，却依然无法忘怀。","Meaningless notes, endless echoes.
+Everything is blurry, yet still unforgettable."
+Text/8d/text,"风停了，迷雾消散。
+我再次看见了你，闪烁的星！","The wind has stopped, the mist has cleared.
+I see you again, the flickering star!"
+Text/8e/text,"再也不曾错过，永不再隔。
+眼中没有尽头，只有永远。","Never to miss again, never to be apart.
+No end in sight, only forever."
+Text/8f/text,"我曾是失落的孤羽，飘忽不定。
+你曾是遥远的灯塔，隐匿却明亮。
+而现在，我们站在同一个明亮的时刻。
+一同编织出，属于我们的光辉。","I was once a lost solitary feather, drifting uncertainly.
+You were once a distant lighthouse, hidden yet bright.
+And now, we stand in the same shining moment.
+Together, we weave the brilliance that belongs to us."
+Text/90/text,"没有言语，相视而笑。
+只是我们，再次相聚.....
+我爱你。","No words, just a smile exchanged.
+Only us, reunited once again...
+I love you."

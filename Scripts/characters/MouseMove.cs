@@ -7,6 +7,7 @@ public partial class MouseMove : Node2D
 	Vector2I window_pos;
 	
 	[Export]public bool Capture;//是否属于抓取状态
+	[Export]Node Dialogic_data;
 
     public override void _Ready()
     {
@@ -29,7 +30,8 @@ public partial class MouseMove : Node2D
 	{
      grab = true;//鼠标按下
 	 GetParent().GetNode<AnimationPlayer>("AnimationPlayer").Play("grab");//播放抓取动画
-	 GetParent().GetNode<BTPlayer>("Character_jump").ProcessMode = (ProcessModeEnum)4;//禁用移动ai
+	 Dialogic_data.Call("Close_JumpAI");//关闭跳动ai
+	 Dialogic_data.Call("Close_JumpAI");//关闭跳动ai
 	 Capture = true;//属于抓取状态
 	}
 

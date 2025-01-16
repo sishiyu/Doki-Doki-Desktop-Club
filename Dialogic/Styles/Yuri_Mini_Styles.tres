@@ -14,6 +14,7 @@ overrides = {}
 script = ExtResource("2_hag85")
 scene = ExtResource("4_iyuqk")
 overrides = {
+"behaviour_direction": "Vector2(-1, -1)",
 "box_modulate": "Color(0.381271, 0.119766, 0.652344, 1)",
 "box_wobble_detail": "0.3",
 "box_wobble_speed": "1.3",

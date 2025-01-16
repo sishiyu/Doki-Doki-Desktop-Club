@@ -1,0 +1,20 @@
+[signal arg="Speak"]
+Monika_Mini: 嘿，在之前游戏结尾我给你写的那首歌你听到了吗？ #id:61
+- 听到了 #id:62
+	Monika_Mini: 那么，你想再听一遍吗？ #id:63
+	- 想 #id:64
+		[music path="res://Assets/Audios/BGM/yourReality.ogg" fade="0.3" volume="0.0" loop="false"]
+		[wait time="180.0"]
+		[signal arg="End"]
+	- 没时间 #id:65
+		Monika_Mini: 好吧，你随意。 #id:66
+		[signal arg="End"]
+- 没听到 #id:67
+	Monika_Mini: 真可惜，看来白忙活一场。那么，你现在想听吗？ #id:68
+	- 想 #id:69
+		[music path="res://Assets/Audios/BGM/yourReality.ogg" fade="0.0" volume="0.0"]
+		[wait time="180.0"]
+		[signal arg="End"]
+	- 没时间 #id:6a
+		Monika_Mini: 好吧，你随意。 #id:6b
+		[signal arg="End"]

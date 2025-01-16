@@ -6,8 +6,13 @@ public partial class AutoLoad_Data : Node
     [Export]public string playerName;//玩家名字
     [Export]public string desktopCharacter;//桌面角色
     [Export]public bool firstGame = true;//是否是第一次游戏
-    [Export]public String language;//语言
+    [Export]public String language = "zh_CN";//语言
+    [Export]public int Dialogue_progress_Sayori = 1;//Sayori日常对话进度
+    [Export]public int Dialogue_progress_Monika = 1;//Monika日常对话进度
+
+
     Player_Data player_data;//玩家数据文件
+
     public override void _Ready()
     {
       
@@ -20,6 +25,8 @@ public partial class AutoLoad_Data : Node
                       desktopCharacter = player_Data_file.Desktop_Character;//获取桌面角色
                       firstGame = player_Data_file.firstGame;;//获取是否第一次游戏
                       language = player_Data_file.language;//获取语言
+                      Dialogue_progress_Sayori = player_Data_file.Dialogue_progress_Sayori;//获取Sayori日常对话进度
+                      Dialogue_progress_Monika = player_Data_file.Dialogue_progress_Monika;//获取Monika日常对话进度
 
                       
                       TranslationServer.SetLocale(language);//设置语言
@@ -47,6 +54,8 @@ public partial class AutoLoad_Data : Node
         player_Data_file.Desktop_Character = desktopCharacter;//保存桌面角色
         player_Data_file.firstGame = firstGame;//保存是否第一次游戏
         player_Data_file.language = language;//保存语言
+        player_Data_file.Dialogue_progress_Sayori = Dialogue_progress_Sayori;//保存Sayori日常对话进度
+        player_Data_file.Dialogue_progress_Monika = Dialogue_progress_Monika;//保存Monika日常对话进度
         ResourceSaver.Save( player_Data_file,"user://player_data.tres");//导入玩家数据文件
     }
 }

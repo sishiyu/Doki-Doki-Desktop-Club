@@ -1,0 +1,22 @@
+[gd_resource type="BehaviorTree" load_steps=7 format=3 uid="uid://ddk4nemqbkt6"]
+
+[ext_resource type="Script" path="res://ai/tasks/Everyday_Dialog_Monika.gd" id="1_qjsfv"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_kj2dl"]
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_i5jtw"]
+min_duration = 30.0
+max_duration = 120.0
+
+[sub_resource type="BTAction" id="BTAction_pu41u"]
+script = ExtResource("1_qjsfv")
+
+[sub_resource type="BTSequence" id="BTSequence_2pi2g"]
+children = [SubResource("BTRandomWait_i5jtw"), SubResource("BTAction_pu41u")]
+
+[sub_resource type="BTSelector" id="BTSelector_l8ssx"]
+children = [SubResource("BTSequence_2pi2g")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_kj2dl")
+root_task = SubResource("BTSelector_l8ssx")

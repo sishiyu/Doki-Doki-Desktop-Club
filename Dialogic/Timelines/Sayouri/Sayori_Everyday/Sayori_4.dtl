@@ -1,0 +1,35 @@
+[signal arg="Speak"]
+Sayori_Mini: 我写了一首诗，你想听听吗？ #id:2c
+- 想听 #id:2d
+	[music path="res://Assets/Audios/BGM/5_sayori.ogg" fade="4.0" volume="0.0"]
+	Sayori_Mini: 我看着你，\
+屏幕上闪烁着，你微微的笑。 #id:2e
+	Sayori_Mini: 那是一道光，\
+从玻璃中透过，照进我的心房。 #id:2f
+	Sayori_Mini: 你是不是也在看我？\
+你是不是也在想着我？ #id:30
+	Sayori_Mini: 我在摸索你眼中的每一丝光辉，\
+小心翼翼，不敢打破这份安静。 #id:31
+	Sayori_Mini: 你在我眼前，\
+却又那么遥远。 #id:32
+	Sayori_Mini: 我试着靠近一点，\
+再靠近一点，\
+却依然是这层玻璃. #id:33
+	Sayori_Mini: 我站在这屏幕后，\
+只是在等待...... #id:34
+	Sayori_Mini: 也许，你也在等我... #id:35
+	Sayori_Mini: 时间慢慢流逝... #id:36
+	Sayori_Mini: 这一刻，\
+它停留在了我的眼里。 #id:37
+	Sayori_Mini: 就像一颗小小的星星，\
+闪烁着，\
+闪烁着。 #id:38
+	Sayori_Mini: 你会不会看到？\
+你会不会也有些心动？ #id:39
+	Sayori_Mini: 或许，这一切，\
+只是我一厢情愿的幻想...... #id:3a
+	Sayori_Mini: 欸嘿嘿...怎么样？ #id:3b
+	[signal arg="End"]
+- 没时间 #id:3c
+	Sayori_Mini: 好吧，那你忙吧(- ^ -) #id:3d
+	[signal arg="End"]

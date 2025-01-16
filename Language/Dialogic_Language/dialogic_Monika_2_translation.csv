@@ -1,0 +1,18 @@
+keys,zh_CN,en
+Text/61/text,嘿，在之前游戏结尾我给你写的那首歌你听到了吗？,"Hey, did you hear the song I wrote for you at the end of the game?"
+Choice/62/text,听到了,I heard that.
+Choice/62/disabled_text,,
+Text/63/text,那么，你想再听一遍吗？,"So, would you like to hear it again?"
+Choice/64/text,想,Yes
+Choice/64/disabled_text,,
+Choice/65/text,没时间,No time.
+Choice/65/disabled_text,,
+Text/66/text,好吧，你随意。,"Alright, it's up to you."
+Choice/67/text,没听到,Didn't hear that.
+Choice/67/disabled_text,,
+Text/68/text,真可惜，看来白忙活一场。那么，你现在想听吗？,"Such a pity, it was all in vain.Well, do you want to listen?"
+Choice/69/text,想,Yes
+Choice/69/disabled_text,,
+Choice/6a/text,没时间,No time.
+Choice/6a/disabled_text,,
+Text/6b/text,好吧，你随意。,"Alright, it's up to you."

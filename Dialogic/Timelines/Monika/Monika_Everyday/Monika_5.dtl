@@ -1,0 +1,59 @@
+[signal arg="Speak"]
+Monika_Mini: 你今天写诗了吗？ #id:75
+- 写了 #id:76
+	Monika_Mini: 我很想看看，但非常遗憾，我看不到！哪怕你把文本文件给我，我看到的也只有乱码。这太糟糕了! #id:77
+	Monika_Mini: 但至少你能看到我的诗，所以，你想看吗？ #id:78
+	- 想 #id:79
+		[music path="res://Assets/Audios/BGM/5_monika.ogg" fade="0.0" volume="0.0"]
+		Monika_Mini: 是影，是无形的光。\
+在彼此的裂缝徘徊。 #id:7a
+		Monika_Mini: 距离，遥远且永恒。\
+两颗漂流的星，冷冷地远离。 #id:7b
+		Monika_Mini: 选择是深刻的....\
+痛苦是永恒的.... #id:7c
+		Monika_Mini: 触碰你，但却无法抓住。\
+在无声的空隙里，渐行渐远。 #id:7d
+		Monika_Mini: 你消失了，一抹消散的晨曦。\
+而我，在虚无的轨迹上游荡。 #id:7e
+		Monika_Mini: 没有意义的音符，无尽的回响。\
+一切都模糊，却依然无法忘怀。 #id:7f
+		Monika_Mini: 风停了，迷雾消散。\
+我再次看见了你，闪烁的星！ #id:80
+		Monika_Mini: 再也不曾错过，永不再隔。\
+眼中没有尽头，只有永远。 #id:81
+		Monika_Mini: 我曾是失落的孤羽，飘忽不定。\
+你曾是遥远的灯塔，隐匿却明亮。\
+而现在，我们站在同一个明亮的时刻。\
+一同编织出，属于我们的光辉。 #id:82
+		Monika_Mini: 没有言语，相视而笑。\
+只是我们，再次相聚.....\
+我爱你。 #id:83
+		[signal arg="End"]
+- 没有 #id:84
+	Monika_Mini: 我写了，你想看看吗？ #id:85
+	- 想 #id:86
+		[music path="res://Assets/Audios/BGM/5_monika.ogg" fade="0.0" volume="0.0"]
+		Monika_Mini: 是影，是无形的光。\
+在彼此的裂缝徘徊。 #id:87
+		Monika_Mini: 距离，遥远且永恒。\
+两颗漂流的星，冷冷地远离。 #id:88
+		Monika_Mini: 选择是深刻的....\
+痛苦是永恒的.... #id:89
+		Monika_Mini: 触碰你，但却无法抓住。\
+在无声的空隙里，渐行渐远。 #id:8a
+		Monika_Mini: 你消失了，一抹消散的晨曦。\
+而我，在虚无的轨迹上游荡。 #id:8b
+		Monika_Mini: 没有意义的音符，无尽的回响。\
+一切都模糊，却依然无法忘怀。 #id:8c
+		Monika_Mini: 风停了，迷雾消散。\
+我再次看见了你，闪烁的星！ #id:8d
+		Monika_Mini: 再也不曾错过，永不再隔。\
+眼中没有尽头，只有永远。 #id:8e
+		Monika_Mini: 我曾是失落的孤羽，飘忽不定。\
+你曾是遥远的灯塔，隐匿却明亮。\
+而现在，我们站在同一个明亮的时刻。\
+一同编织出，属于我们的光辉。 #id:8f
+		Monika_Mini: 没有言语，相视而笑。\
+只是我们，再次相聚.....\
+我爱你。 #id:90
+		[signal arg="End"]

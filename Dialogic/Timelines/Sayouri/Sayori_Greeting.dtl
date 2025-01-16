@@ -1,3 +1,3 @@
 [signal arg="Speak"]
-Sayori_Mini: 诶嘿嘿,我在这！看得见我吗？：D #id:13
+Sayori_Mini: 诶嘿嘿，我在这，看得见我吗？ #id:13
 [signal arg="End"]

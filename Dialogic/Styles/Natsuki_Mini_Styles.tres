@@ -14,6 +14,7 @@ overrides = {}
 script = ExtResource("2_v8pal")
 scene = ExtResource("4_d1n1u")
 overrides = {
+"behaviour_direction": "Vector2(-1, -1)",
 "box_modulate": "Color(1, 0.44, 0.757333, 1)",
 "box_wobble_detail": "0.3",
 "box_wobble_speed": "1.3",
@@ -30,4 +31,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("2_v8pal")]([])
-metadata/_latest_layer = ""
+metadata/_latest_layer = "11"

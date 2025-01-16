@@ -1,0 +1,50 @@
+keys,zh_CN,en
+Text/2c/text,我写了一首诗，你想听听吗？,"I wrote a poem, would you like to hear it? "
+Choice/2d/text,想听,want to hear
+Choice/2d/disabled_text,,
+Text/2e/text,"我看着你，
+屏幕上闪烁着，你微微的笑。","I look at you,
+A faint smile flickers on the screen."
+Text/2f/text,"那是一道光，
+从玻璃中透过，照进我的心房。","It’s a ray of light,
+Piercing through the glass, lighting up my heart."
+Text/30/text,"你是不是也在看我？
+你是不是也在想着我？","Are you looking at me too?
+Are you thinking of me too?"
+Text/31/text,"我在摸索你眼中的每一丝光辉，
+小心翼翼，不敢打破这份安静。","I trace every bit of light in your eyes,
+Carefully, afraid to break this quiet moment."
+Text/32/text,"你在我眼前，
+却又那么遥远。","You’re right in front of me,
+Yet so far away."
+Text/33/text,"我试着靠近一点，
+再靠近一点，
+却依然是这层玻璃.","I try to get a little closer,
+A little closer still,
+But it’s still just this layer of glass.
+"
+Text/34/text,"我站在这屏幕后，
+只是在等待......","I stand behind this screen,
+Simply waiting…
+"
+Text/35/text,也许，你也在等我...,"Perhaps, you’re waiting for me too..."
+Text/36/text,时间慢慢流逝...,Time slowly drifts by…
+Text/37/text,"这一刻，
+它停留在了我的眼里。","This moment,
+It lingers in my eyes."
+Text/38/text,"就像一颗小小的星星，
+闪烁着，
+闪烁着。","Like a tiny star,
+Twinkling,
+Twinkling."
+Text/39/text,"你会不会看到？
+你会不会也有些心动？","Will you see it?
+Will you feel a little stir in your heart?"
+Text/3a/text,"或许，这一切，
+只是我一厢情愿的幻想......","Maybe, this is all just,
+My one-sided fantasy…
+"
+Text/3b/text,欸嘿嘿...怎么样？,Hehe... How is it?
+Choice/3c/text,没时间,No time
+Choice/3c/disabled_text,,
+Text/3d/text,好吧，那你忙吧(- ^ -),"Alright, then you go ahead and be busy (-^-)."

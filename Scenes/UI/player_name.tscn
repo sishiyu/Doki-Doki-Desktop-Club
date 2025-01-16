@@ -71,7 +71,7 @@ theme_override_colors/caret_color = Color(0.803922, 0.376471, 0.478431, 1)
 theme_override_colors/font_placeholder_color = Color(0.509286, 0.509286, 0.509286, 1)
 theme_override_colors/font_color = Color(0.803922, 0.376471, 0.478431, 1)
 placeholder_text = "PLAYER_NAME_"
-max_length = 6
+max_length = 10
 expand_to_text_length = true
 flat = true
 select_all_on_focus = true
@@ -114,7 +114,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("6_76b0o")
 
-[node name="Language_English" type="Button" parent="."]
+[node name="Language_English" type="Button" parent="." node_paths=PackedStringArray("player_name")]
 layout_mode = 0
 offset_left = 298.0
 offset_top = 406.0
@@ -124,8 +124,9 @@ theme_override_colors/font_color = Color(0.694118, 0.423529, 0.466667, 1)
 text = "English"
 flat = true
 script = ExtResource("8_mc3v8")
+player_name = NodePath("..")
 
-[node name="Language_CN" type="Button" parent="."]
+[node name="Language_CN" type="Button" parent="." node_paths=PackedStringArray("player_name")]
 layout_mode = 0
 offset_left = 742.0
 offset_top = 406.0
@@ -135,6 +136,7 @@ theme_override_colors/font_color = Color(0.694118, 0.423529, 0.466667, 1)
 text = "中文"
 flat = true
 script = ExtResource("9_anlyn")
+player_name = NodePath("..")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

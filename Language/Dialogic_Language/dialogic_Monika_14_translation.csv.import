@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bbckc0ti5ipv7"
+
+[deps]
+
+files=["res://Language/Dialogic_Language/dialogic_Monika_14_translation.zh_CN.translation"]
+
+source_file="res://Language/Dialogic_Language/dialogic_Monika_14_translation.csv"
+dest_files=["res://Language/Dialogic_Language/dialogic_Monika_14_translation.zh_CN.translation"]
+
+[params]
+
+compress=true
+delimiter=0

@@ -1,0 +1,24 @@
+[gd_resource type="BehaviorTree" load_steps=8 format=3 uid="uid://dxg1wb6vfbcs4"]
+
+[ext_resource type="Script" path="res://ai/tasks/Everyday_Dialog_Sayori.gd" id="1_g6g3c"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_rws7a"]
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_kry52"]
+min_duration = 30.0
+max_duration = 120.0
+
+[sub_resource type="BTAction" id="BTAction_dcwxh"]
+script = ExtResource("1_g6g3c")
+
+[sub_resource type="BTWait" id="BTWait_43ul1"]
+
+[sub_resource type="BTSequence" id="BTSequence_18jet"]
+children = [SubResource("BTRandomWait_kry52"), SubResource("BTAction_dcwxh"), SubResource("BTWait_43ul1")]
+
+[sub_resource type="BTSelector" id="BTSelector_ydusf"]
+children = [SubResource("BTSequence_18jet")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_rws7a")
+root_task = SubResource("BTSelector_ydusf")
