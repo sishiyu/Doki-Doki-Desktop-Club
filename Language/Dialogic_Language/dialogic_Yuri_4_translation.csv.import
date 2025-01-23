@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c3a2v57p8ddsy"
+
+[deps]
+
+files=["res://Language/Dialogic_Language/dialogic_Yuri_4_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Yuri_4_translation.en.translation"]
+
+source_file="res://Language/Dialogic_Language/dialogic_Yuri_4_translation.csv"
+dest_files=["res://Language/Dialogic_Language/dialogic_Yuri_4_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Yuri_4_translation.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

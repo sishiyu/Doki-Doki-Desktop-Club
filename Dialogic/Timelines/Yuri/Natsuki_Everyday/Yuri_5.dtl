@@ -1,0 +1,19 @@
+[signal arg="Speak"]
+Yuri_Mini: 嗯...我，我写了首诗，你想不想看一下...? #id:dc
+- 想看 #id:dd
+	[music path="res://Assets/Audios/BGM/5_yuri.ogg" fade="0.0" volume="0.0"]
+	Yuri_Mini: 黑暗的边缘，\
+是你靠近的气息。 #id:de
+	Yuri_Mini: 寂静之中，\
+心跳化作刀刃，划过天空。 #id:df
+	Yuri_Mini: 若靠近，\
+或许可以目睹，刀下的绯红。 #id:e0
+	Yuri_Mini: 不必明白，这份爱有多么深沉。 #id:e1
+	Yuri_Mini: 也许它本就无法到达终点，\
+但在这短暂的瞬间，\
+我早已迷失... #id:e2
+	Yuri_Mini: 无可救药！！ #id:e3
+	[signal arg="End"]
+- 没时间 #id:e4
+	Yuri_Mini: 噢..好的 #id:e5
+	[signal arg="End"]

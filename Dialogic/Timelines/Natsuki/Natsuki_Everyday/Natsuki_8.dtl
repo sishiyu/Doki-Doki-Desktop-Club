@@ -1,0 +1,14 @@
+[signal arg="Speak"]
+Natsuki_Mini: 我刚刚写了一首诗，要看吗？(〃_〃) #id:c5
+- 想看 #id:c6
+	[music path="res://Assets/Audios/BGM/5_natsuki.ogg" fade="0.0" volume="0.0"]
+	Natsuki_Mini: 小兔把胡萝卜分给大家，招来了小狗。 #id:c7
+	Natsuki_Mini: 跟小狗在一起很快乐，这是为什么？ #id:c8
+	Natsuki_Mini: 小兔和小猫吵架，小狗帮了小兔。 #id:c9
+	Natsuki_Mini: 跟小狗在一起暖暖的，这是为什么？ #id:ca
+	Natsuki_Mini: 小兔去小狗家玩，一起嬉戏打闹。 #id:cb
+	Natsuki_Mini: 为什么？不用再问了吧，已经很明显了。 #id:cc
+	[signal arg="End"]
+- 没时间 #id:cd
+	Natsuki_Mini: ...随便你 #id:ce
+	[signal arg="End"]

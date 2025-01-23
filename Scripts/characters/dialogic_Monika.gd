@@ -25,7 +25,8 @@ func on_Dialogic_signal(Dialogic_signal:String):
 	
 	if (Dialogic_signal == "End"):
 		recovery()
-		Dialogic_data.Open_JumpAI()#打开
+		if(not mouse_move.Capture):
+			Dialogic_data.Open_JumpAI()#打开
 		Dialogic_data.Open_DialogAI()#打开
 		Speak = false
 

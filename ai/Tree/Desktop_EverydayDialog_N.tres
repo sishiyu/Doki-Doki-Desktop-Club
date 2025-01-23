@@ -1,0 +1,22 @@
+[gd_resource type="BehaviorTree" load_steps=7 format=3 uid="uid://dfljepqrvfsnb"]
+
+[ext_resource type="Script" path="res://ai/tasks/Everyday_Dialog_Natsuki.gd" id="1_0ahsp"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_cuaii"]
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_u6vqq"]
+min_duration = 30.0
+max_duration = 120.0
+
+[sub_resource type="BTAction" id="BTAction_vovx2"]
+script = ExtResource("1_0ahsp")
+
+[sub_resource type="BTSequence" id="BTSequence_l4rd4"]
+children = [SubResource("BTRandomWait_u6vqq"), SubResource("BTAction_vovx2")]
+
+[sub_resource type="BTSelector" id="BTSelector_y3hcm"]
+children = [SubResource("BTSequence_l4rd4")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_cuaii")
+root_task = SubResource("BTSelector_y3hcm")

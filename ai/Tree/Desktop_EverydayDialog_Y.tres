@@ -1,0 +1,22 @@
+[gd_resource type="BehaviorTree" load_steps=7 format=3 uid="uid://4n58dfjd48ll"]
+
+[ext_resource type="Script" path="res://ai/tasks/Everyday_Dialog_Yuri.gd" id="1_lawaw"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_jm4rt"]
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_6jmel"]
+min_duration = 30.0
+max_duration = 120.0
+
+[sub_resource type="BTAction" id="BTAction_vkk5a"]
+script = ExtResource("1_lawaw")
+
+[sub_resource type="BTSequence" id="BTSequence_2x5g8"]
+children = [SubResource("BTRandomWait_6jmel"), SubResource("BTAction_vkk5a")]
+
+[sub_resource type="BTSelector" id="BTSelector_mptnp"]
+children = [SubResource("BTSequence_2x5g8")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_jm4rt")
+root_task = SubResource("BTSelector_mptnp")

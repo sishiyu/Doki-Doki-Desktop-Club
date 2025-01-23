@@ -6,10 +6,10 @@ uid="uid://cu5yrbylym7ng"
 
 [deps]
 
-files=["res://Language/Dialogic_Language/dialogic_Monika_11_translation.zh_CN.translation"]
+files=["res://Language/Dialogic_Language/dialogic_Monika_11_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_11_translation.en.translation"]
 
 source_file="res://Language/Dialogic_Language/dialogic_Monika_11_translation.csv"
-dest_files=["res://Language/Dialogic_Language/dialogic_Monika_11_translation.zh_CN.translation"]
+dest_files=["res://Language/Dialogic_Language/dialogic_Monika_11_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_11_translation.en.translation"]
 
 [params]
 

@@ -1,0 +1,14 @@
+[signal arg="Speak"]
+Natsuki_Mini: 唔，午餐嘛，没什么特别的。 #id:ad
+Natsuki_Mini: 如果要吃的话，还是自己做的好，外面的东西不一定合口味。 #id:ae
+Natsuki_Mini: 而且，自己做了才有成就感，别以为我只会烘培，我会的可多了！(ﾟヮﾟ) #id:af
+- 我想吃你做的中国菜 #id:b0
+	Natsuki_Mini: ...那，那就吃喽！我会做的！(⁄ ⁄•⁄o⁄•⁄ ⁄) #id:b1
+	Natsuki_Mini: 不对，你吃不到啊，难道你有办法进来？还是说你就是想看我这副扭扭捏捏的样子？！(╯°Д°）╯ #id:b2
+	- 对不起 #id:b3
+		Natsuki_Mini: 啊...道什么歉啊，这点小事..我才是...对不起，我习惯这样了...(・´з`・) #id:b4
+		- 我就喜欢你这个样子 #id:b5
+			Natsuki_Mini: ...你...这...(⁄ ⁄•⁄o⁄•⁄ ⁄) #id:b6
+			[signal arg="End"]
+		- 没关系 #id:b7
+			[signal arg="End"]

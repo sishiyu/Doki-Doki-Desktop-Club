@@ -10,7 +10,7 @@
 "Tone": {
 "mode": 0,
 "name": "Tone",
-"pitch_base": 2.0,
+"pitch_base": 2.2,
 "pitch_variance": 0.1,
 "skip_characters": 0.0,
 "sound_path": "res://Assets/Audios/Character_Audios/character.wav",

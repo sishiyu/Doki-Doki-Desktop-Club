@@ -52,6 +52,14 @@ directories/dtl_directory={
 "Monika_8": "res://Dialogic/Timelines/Monika/Monika_Everyday/Monika_8.dtl",
 "Monika_9": "res://Dialogic/Timelines/Monika/Monika_Everyday/Monika_9.dtl",
 "Monika_Greeting": "res://Dialogic/Timelines/Monika/Monika_Greeting.dtl",
+"Natsuki_1": "res://Dialogic/Timelines/Natsuki/Natsuki_Everyday/Natsuki_1.dtl",
+"Natsuki_2": "res://Dialogic/Timelines/Natsuki/Natsuki_Everyday/Natsuki_2.dtl",
+"Natsuki_3": "res://Dialogic/Timelines/Natsuki/Natsuki_Everyday/Natsuki_3.dtl",
+"Natsuki_4": "res://Dialogic/Timelines/Natsuki/Natsuki_Everyday/Natsuki_4.dtl",
+"Natsuki_5": "res://Dialogic/Timelines/Natsuki/Natsuki_Everyday/Natsuki_5.dtl",
+"Natsuki_6": "res://Dialogic/Timelines/Natsuki/Natsuki_Everyday/Natsuki_6.dtl",
+"Natsuki_7": "res://Dialogic/Timelines/Natsuki/Natsuki_Everyday/Natsuki_7.dtl",
+"Natsuki_8": "res://Dialogic/Timelines/Natsuki/Natsuki_Everyday/Natsuki_8.dtl",
 "Natsuki_Greeting": "res://Dialogic/Timelines/Natsuki/Natsuki_Greeting.dtl",
 "Player_Name": "res://Dialogic/Timelines/System/Player_Name.dtl",
 "Sayori_1": "res://Dialogic/Timelines/Sayouri/Sayori_Everyday/Sayori_1.dtl",
@@ -65,6 +73,16 @@ directories/dtl_directory={
 "Sayori_8": "res://Dialogic/Timelines/Sayouri/Sayori_Everyday/Sayori_8.dtl",
 "Sayori_9": "res://Dialogic/Timelines/Sayouri/Sayori_Everyday/Sayori_9.dtl",
 "Sayori_Greeting": "res://Dialogic/Timelines/Sayouri/Sayori_Greeting.dtl",
+"Yuri_1": "res://Dialogic/Timelines/Yuri/Natsuki_Everyday/Yuri_1.dtl",
+"Yuri_10": "res://Dialogic/Timelines/Yuri/Natsuki_Everyday/Yuri_10.dtl",
+"Yuri_2": "res://Dialogic/Timelines/Yuri/Natsuki_Everyday/Yuri_2.dtl",
+"Yuri_3": "res://Dialogic/Timelines/Yuri/Natsuki_Everyday/Yuri_3.dtl",
+"Yuri_4": "res://Dialogic/Timelines/Yuri/Natsuki_Everyday/Yuri_4.dtl",
+"Yuri_5": "res://Dialogic/Timelines/Yuri/Natsuki_Everyday/Yuri_5.dtl",
+"Yuri_6": "res://Dialogic/Timelines/Yuri/Natsuki_Everyday/Yuri_6.dtl",
+"Yuri_7": "res://Dialogic/Timelines/Yuri/Natsuki_Everyday/Yuri_7.dtl",
+"Yuri_8": "res://Dialogic/Timelines/Yuri/Natsuki_Everyday/Yuri_8.dtl",
+"Yuri_9": "res://Dialogic/Timelines/Yuri/Natsuki_Everyday/Yuri_9.dtl",
 "Yuri_Greeting": "res://Dialogic/Timelines/Yuri/Yuri_Greeting.dtl"
 }
 glossary/default_case_sensitive=true
@@ -74,11 +92,11 @@ variables={
 layout/style_list=["res://Dialogic/Styles/Sayouri_Mini_Styles.tres", "res://Dialogic/Styles/Monika_Mini_Styles.tres", "res://Dialogic/Styles/Natsuki_Mini_Styles.tres", "res://Dialogic/Styles/Yuri_Mini_Styles.tres", "res://Dialogic/Styles/System_Bubble.tres"]
 layout/default_style="res://Dialogic/Styles/Sayouri_Mini_Styles.tres"
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.1
+text/letter_speed=0.09
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
-text/autoadvance_per_character_delay=0.1
+text/autoadvance_per_character_delay=0
 text/autoadvance_ignored_characters_enabled=true
 audio/max_channels=4.0
 animations/join_default_length=0.5
@@ -93,7 +111,7 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={
-",，": 0.3,
+",，:：‘'“\"": 0.3,
 "。.？?！!": 0.4
 }
 text/input_action="Null"
@@ -114,13 +132,14 @@ translation/translation_folder="res://Language/Dialogic_Language"
 translation/save_mode=0
 translation/add_separator=true
 timer/process_in_physics=false
-translation/id_counter=160
+translation/id_counter=242
 translation/locales=["en", "zh_CN"]
 translation/intern/save_mode=0
 translation/intern/file_mode=1
 translation/intern/translation_folder="res://Language/Dialogic_Language"
 text/autoadvance_per_word_delay=0
 text/absolute_autopauses=false
+text/autoadvance_fixed_delay=4.0
 
 [display]
 
@@ -145,6 +164,11 @@ mouse_left={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+mouse_right={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
 dialogic_default_action={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
@@ -161,7 +185,7 @@ Null={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://Language/Dialogic_Language/dialogic_Monika_Greeting_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_Greeting_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_character_translations.en.translation", "res://Language/Dialogic_Language/dialogic_character_translations.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_Greeting_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_Greeting_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Player_Name_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Player_Name_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_Greeting_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_Greeting_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Yuri_Greeting_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Yuri_Greeting_translation.zh_CN.translation", "res://Language/language.en.translation", "res://Language/language.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_10_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_10_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_1_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_1_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_2_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_2_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_3_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_3_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_4_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_4_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_5_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_5_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_6_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_6_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_7_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_7_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_8_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_8_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_9_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_9_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_10_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_11_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_12_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_13_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_14_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_15_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_1_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_1_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_2_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_2_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_3_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_3_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_4_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_4_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_5_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_5_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_6_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_6_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_7_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_7_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_8_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_9_translation.zh_CN.translation")
+locale/translations=PackedStringArray("res://Language/Dialogic_Language/dialogic_Monika_Greeting_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_Greeting_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_character_translations.en.translation", "res://Language/Dialogic_Language/dialogic_character_translations.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_Greeting_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_Greeting_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Player_Name_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Player_Name_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_Greeting_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_Greeting_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Yuri_Greeting_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Yuri_Greeting_translation.zh_CN.translation", "res://Language/language.en.translation", "res://Language/language.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_10_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_10_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_1_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_1_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_2_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_2_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_3_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_3_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_4_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_4_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_5_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_5_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_6_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_6_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_7_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_7_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_8_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_8_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Sayori_9_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Sayori_9_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_10_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_11_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_12_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_13_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_14_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_15_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_1_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_1_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_2_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_2_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_3_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_3_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_4_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_4_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_5_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_5_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_6_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_6_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_7_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_7_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_8_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_9_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Monika_10_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_11_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_12_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_13_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_14_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_15_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_8_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Monika_9_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_1_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_1_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_2_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_3_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_4_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_5_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_6_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_7_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_8_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_2_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_3_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_4_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_5_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_6_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_7_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Natsuki_8_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Yuri_10_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Yuri_10_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Yuri_1_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Yuri_1_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Yuri_2_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Yuri_2_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Yuri_3_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Yuri_3_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Yuri_4_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Yuri_4_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Yuri_5_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Yuri_5_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Yuri_6_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Yuri_6_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Yuri_7_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Yuri_7_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Yuri_8_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Yuri_8_translation.zh_CN.translation", "res://Language/Dialogic_Language/dialogic_Yuri_9_translation.en.translation", "res://Language/Dialogic_Language/dialogic_Yuri_9_translation.zh_CN.translation")
 locale/test="zh_CN"
 
 [layer_names]

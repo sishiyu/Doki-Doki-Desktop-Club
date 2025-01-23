@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bvuu4wkaehhgt"]
+[gd_scene load_steps=42 format=3 uid="uid://bvuu4wkaehhgt"]
 
 [ext_resource type="Script" path="res://Scripts/UI/SelectCharacter_penetrating.cs" id="1_h4of6"]
 [ext_resource type="Texture2D" uid="uid://s7340f0igf32" path="res://Assets/Textures/UI/background.png" id="2_myjfb"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://ddklynu8dx24o" path="res://Assets/Audios/UI/click.ogg" id="19_nngea"]
 [ext_resource type="Script" path="res://Scripts/UI/Trig.cs" id="20_h206u"]
 [ext_resource type="Script" path="res://Scripts/data/dialogic_var_set.gd" id="21_v1cdr"]
+[ext_resource type="Script" path="res://Scripts/UI/mouse_through.gd" id="22_f546t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v6bh2"]
 
@@ -362,6 +363,54 @@ tracks/13/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("character/Yuri/Area2D:monitorable")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("character/Natsuki/Area2D:monitorable")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("character/Monika/Area2D:monitorable")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("character/Sayori/Area2D:monitorable")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_xupcx"]
 resource_name = "start"
@@ -533,6 +582,54 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("character/Sayori/Area2D:monitorable")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 8.53333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("character/Monika/Area2D:monitorable")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 8.53333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("character/Natsuki/Area2D:monitorable")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 8.53333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("character/Yuri/Area2D:monitorable")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 8.53333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_run2q"]
@@ -751,6 +848,13 @@ shape = SubResource("CircleShape2D_yujup")
 
 [node name="Dialogic_var_set" type="Node" parent="."]
 script = ExtResource("21_v1cdr")
+
+[node name="MouseThrough" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("22_f546t")
 
 [connection signal="focus_entered" from="character/Sayori" to="character/Sayori" method="_on_focus_entered"]
 [connection signal="area_entered" from="character/Sayori/Area2D" to="character/Sayori" method="_on_area_2d_area_entered"]

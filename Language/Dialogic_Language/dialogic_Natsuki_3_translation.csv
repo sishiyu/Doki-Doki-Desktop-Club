@@ -1,0 +1,16 @@
+keys,zh_CN,en
+Text/ad/text,唔，午餐嘛，没什么特别的。,"Hmm, lunch? Nothing special."
+Text/ae/text,如果要吃的话，还是自己做的好，外面的东西不一定合口味。,"If I’m going to eat, it’s better if I make it myself. The food from outside doesn’t always suit my taste."
+Text/af/text,而且，自己做了才有成就感，别以为我只会烘培，我会的可多了！(ﾟヮﾟ),"Plus, there’s a sense of accomplishment when you make it yourself. Don’t think I only know how to bake—I can do a lot more than that! (0V0)"
+Choice/b0/text,我想吃你做的中国菜,I want to eat the Chinese food you make.
+Choice/b0/disabled_text,,
+Text/b1/text,...那，那就吃喽！我会做的！(⁄ ⁄•⁄o⁄•⁄ ⁄),"...Well, then I’ll just make it! I’ll do it! (//-/o/-//)"
+Text/b2/text,不对，你吃不到啊，难道你有办法进来？还是说你就是想看我这副扭扭捏捏的样子？！(╯°Д°）╯,"Wait, you can’t eat it! Unless you have a way to get in here? Or are you just trying to watch me act all shy and awkward?! (╯°Д°）╯"
+Choice/b3/text,对不起,I'm sorry 
+Choice/b3/disabled_text,,
+Text/b4/text,啊...道什么歉啊，这点小事..我才是...对不起，我习惯这样了...(・´з`・),"Ah... what are you apologizing for? It’s just a small thing... I should be the one... sorry, I’m just used to this... (′0_0`)"
+Choice/b5/text,我就喜欢你这个样子,I just love you like this
+Choice/b5/disabled_text,,
+Text/b6/text,...你...这...(⁄ ⁄•⁄o⁄•⁄ ⁄),...You... this... (//0/o/0//)
+Choice/b7/text,没关系,It's okay.
+Choice/b7/disabled_text,,

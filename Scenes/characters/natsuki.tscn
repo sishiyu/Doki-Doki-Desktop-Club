@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dblos5nigod6g"]
+[gd_scene load_steps=38 format=3 uid="uid://dblos5nigod6g"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Natsuki_penetrating.cs" id="1_a15u1"]
 [ext_resource type="Texture2D" uid="uid://cfjg3s6uh88s1" path="res://Assets/Textures/Character/n_sticker_1.png" id="2_s3lib"]
@@ -9,7 +9,18 @@
 [ext_resource type="PackedScene" uid="uid://bjvx77mes6ufw" path="res://Scenes/UI/first_game_window_prompt.tscn" id="9_ficub"]
 [ext_resource type="BehaviorTree" uid="uid://cpo577wnpgtso" path="res://ai/Tree/Character_Move.tres" id="10_onj6q"]
 [ext_resource type="Script" path="res://Scripts/UI/mouse_through.gd" id="10_raxq7"]
+[ext_resource type="BehaviorTree" uid="uid://dfljepqrvfsnb" path="res://ai/Tree/Desktop_EverydayDialog_N.tres" id="11_2oaaa"]
 [ext_resource type="Script" path="res://Scripts/data/dialogic_var_set.gd" id="11_32mkw"]
+[ext_resource type="Texture2D" uid="uid://r6hmydpc8n4i" path="res://Assets/Textures/UI/icon/pink/22_Home (3)SoftPink.png" id="12_8w73g"]
+[ext_resource type="Texture2D" uid="uid://tpjcstrfltk5" path="res://Assets/Textures/UI/icon/pink/19_Menu (3)SoftPink.png" id="12_j06oe"]
+[ext_resource type="Texture2D" uid="uid://cldconrqedqxx" path="res://Assets/Textures/UI/icon/pink/game.png" id="14_8duwf"]
+[ext_resource type="Texture2D" uid="uid://nqks64v5cjcq" path="res://Assets/Textures/UI/icon/pink/22_Options (3)SoftPink.png" id="15_06j1a"]
+[ext_resource type="Texture2D" uid="uid://cu8dyjslisbvd" path="res://Assets/Textures/UI/icon/pink/21_Restart (3)SoftPink.png" id="16_p0xr0"]
+[ext_resource type="Texture2D" uid="uid://dux0g045npmys" path="res://Assets/Textures/UI/icon/pink/12_IconPortfolio (3)SoftPink.png" id="17_hnyjy"]
+[ext_resource type="Texture2D" uid="uid://b57jeqj86uwvf" path="res://Assets/Textures/UI/icon/pink/11_IconSound (3)SoftPink.png" id="18_inhmo"]
+[ext_resource type="AudioStream" uid="uid://btw1cibu8ir43" path="res://Assets/Audios/UI/2/Retro7.mp3" id="19_xaro2"]
+[ext_resource type="Script" path="res://Scripts/UI/menu/click_menu.gd" id="20_cqrta"]
+[ext_resource type="Script" path="res://Scripts/UI/Trig.cs" id="20_qcski"]
 
 [sub_resource type="Animation" id="Animation_4ti7m"]
 length = 0.001
@@ -23,7 +34,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(0.8, 0.8)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -52,30 +63,43 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Character_jump:process_mode")
+tracks/3/path = NodePath("TextureRect:pivot_offset")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(70, 31.805)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("TextureRect:pivot_offset")
+tracks/4/path = NodePath("TextureRect:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(70, 31.805)]
+"values": [Vector2(506, 296)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bubble_Position:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(550, 322)]
 }
 
 [sub_resource type="Animation" id="Animation_5d85k"]
 resource_name = "Speak"
+length = 2.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -92,38 +116,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Character_jump:process_mode")
+tracks/1/path = NodePath("TextureRect:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(506, 296), Vector2(506, 274), Vector2(506, 296)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect:rotation")
+tracks/2/path = NodePath("Bubble_Position:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0523599, 0.0, -0.0523599, 0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("TextureRect:pivot_offset")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(70, 147.18)]
+"values": [Vector2(550, 322), Vector2(550, 297), Vector2(550, 322)]
 }
 
 [sub_resource type="Animation" id="Animation_rdhga"]
@@ -163,7 +175,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(0.8, 0.8)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -189,18 +201,6 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(70, 31.805)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Character_jump:process_mode")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
 
 [sub_resource type="Animation" id="Animation_2u3uh"]
 resource_name = "left"
@@ -215,7 +215,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1, 1), Vector2(1, 1)]
+"values": [Vector2(-0.8, 0.8), Vector2(0.8, 0.8)]
 }
 
 [sub_resource type="Animation" id="Animation_bvxjj"]
@@ -243,7 +243,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(0.8, 0.8)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -272,26 +272,40 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Character_jump:process_mode")
+tracks/4/path = NodePath("TextureRect:pivot_offset")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(70, 31.805)]
 }
-tracks/5/type = "value"
+tracks/5/type = "method"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("TextureRect:pivot_offset")
+tracks/5/path = NodePath("Dialogic")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Speak_play"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(70, 31.805)]
+"values": [Vector2(506, 296)]
 }
 
 [sub_resource type="Animation" id="Animation_gqt0v"]
@@ -307,7 +321,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(-1, 1)]
+"values": [Vector2(0.8, 0.8), Vector2(-0.8, 0.8)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rboqg"]
@@ -321,6 +335,318 @@ _data = {
 }
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_3kmy8"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_2by35"]
+
+[sub_resource type="Animation" id="Animation_mc8eu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("switch:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("functions:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(9.99868e-06, 9.99868e-06)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dokiWorld:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("game:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(9.99868e-06, 9.99868e-06)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("music:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("file:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("settings:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("menu_Audio:stream")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_rm2dq"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("file:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("settings:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("music:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1e-05, 1e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("game:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1e-05, 1e-05)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("functions:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1e-05, 1e-05)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("dokiWorld:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1e-05, 1e-05)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("switch:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_43aa1"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("switch:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.6, 0.6), Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("functions:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(9.99868e-06, 9.99868e-06), Vector2(0.6, 0.6), Vector2(0.5, 0.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dokiWorld:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.6, 0.6), Vector2(0.5, 0.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("game:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(9.99868e-06, 9.99868e-06), Vector2(0.6, 0.6), Vector2(0.5, 0.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("music:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.6, 0.6), Vector2(0.5, 0.5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("file:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.3, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.6, 0.6), Vector2(0.5, 0.5)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("settings:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.3, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.6, 0.6), Vector2(0.5, 0.5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("menu_Audio:stream")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("19_xaro2")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("menu_Audio:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qq203"]
+_data = {
+"RESET": SubResource("Animation_mc8eu"),
+"close": SubResource("Animation_rm2dq"),
+"open": SubResource("Animation_43aa1")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3fxxc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8a3i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wgdl2"]
 
 [node name="Natsuki" type="Control"]
 layout_mode = 3
@@ -344,6 +670,7 @@ offset_right = 71.0
 offset_bottom = 133.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8, 0.8)
 pivot_offset = Vector2(70, 31.805)
 focus_mode = 2
 texture = ExtResource("2_s3lib")
@@ -360,14 +687,17 @@ libraries = {
 "": SubResource("AnimationLibrary_rboqg")
 }
 
-[node name="mouse_move" type="Node2D" parent="."]
+[node name="mouse_move" type="Node2D" parent="." node_paths=PackedStringArray("Dialogic_data")]
 script = ExtResource("5_jc3s6")
+Dialogic_data = NodePath("../Dialogic_data")
 
-[node name="Dialogic" type="Node2D" parent="."]
+[node name="Dialogic" type="Node2D" parent="." node_paths=PackedStringArray("Dialogic_data", "click_menu")]
 script = ExtResource("8_ejw6a")
+Dialogic_data = NodePath("../Dialogic_data")
+click_menu = NodePath("../menu/click_menu")
 
 [node name="Bubble_Position" type="Marker2D" parent="."]
-position = Vector2(615, 319)
+position = Vector2(550, 322)
 
 [node name="First Game Window Prompt" parent="." instance=ExtResource("9_ficub")]
 
@@ -382,12 +712,166 @@ script = ExtResource("10_raxq7")
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(52, 30, 1089, 42, 1080, 582, 69, 589)
 
-[node name="Dialogic_var_set" type="Node" parent="."]
+[node name="Dialogic_data" type="Node" parent="." node_paths=PackedStringArray("jumpAI", "dialogAI")]
 script = ExtResource("11_32mkw")
+jumpAI = NodePath("../Character_jump")
+dialogAI = NodePath("../Everyday_Dialog")
 
 [node name="Character_jump" type="BTPlayer" parent="."]
 behavior_tree = ExtResource("10_onj6q")
 blackboard_plan = SubResource("BlackboardPlan_3kmy8")
 
+[node name="Everyday_Dialog" type="BTPlayer" parent="."]
+behavior_tree = ExtResource("11_2oaaa")
+blackboard_plan = SubResource("BlackboardPlan_2by35")
+
+[node name="menu" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 29.0
+offset_right = 40.0
+offset_bottom = 69.0
+
+[node name="functions" type="TextureButton" parent="menu"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 256.0
+offset_right = 527.0
+offset_bottom = 319.0
+scale = Vector2(9.99868e-06, 9.99868e-06)
+pivot_offset = Vector2(31, 31)
+texture_normal = ExtResource("12_j06oe")
+texture_pressed = ExtResource("12_j06oe")
+texture_hover = ExtResource("12_j06oe")
+texture_disabled = ExtResource("12_j06oe")
+texture_focused = ExtResource("12_j06oe")
+
+[node name="game" type="TextureButton" parent="menu"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 306.0
+offset_right = 527.0
+offset_bottom = 369.0
+scale = Vector2(9.99868e-06, 9.99868e-06)
+pivot_offset = Vector2(31, 31)
+texture_normal = ExtResource("14_8duwf")
+texture_pressed = ExtResource("14_8duwf")
+texture_hover = ExtResource("14_8duwf")
+texture_disabled = ExtResource("14_8duwf")
+texture_focused = ExtResource("14_8duwf")
+
+[node name="settings" type="TextureButton" parent="menu"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 356.0
+offset_right = 527.0
+offset_bottom = 419.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(31, 31)
+texture_normal = ExtResource("15_06j1a")
+texture_pressed = ExtResource("15_06j1a")
+texture_hover = ExtResource("15_06j1a")
+texture_disabled = ExtResource("15_06j1a")
+texture_focused = ExtResource("15_06j1a")
+
+[node name="dokiWorld" type="TextureButton" parent="menu"]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 256.0
+offset_right = 688.0
+offset_bottom = 319.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(31, 31)
+texture_normal = ExtResource("12_8w73g")
+texture_pressed = ExtResource("12_8w73g")
+texture_hover = ExtResource("12_8w73g")
+texture_disabled = ExtResource("12_8w73g")
+texture_focused = ExtResource("12_8w73g")
+
+[node name="music" type="TextureButton" parent="menu"]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 306.0
+offset_right = 688.0
+offset_bottom = 369.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(31, 31)
+texture_normal = ExtResource("18_inhmo")
+texture_pressed = ExtResource("18_inhmo")
+texture_hover = ExtResource("18_inhmo")
+texture_disabled = ExtResource("18_inhmo")
+texture_focused = ExtResource("18_inhmo")
+
+[node name="file" type="TextureButton" parent="menu"]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 356.0
+offset_right = 688.0
+offset_bottom = 419.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(31, 31)
+texture_normal = ExtResource("17_hnyjy")
+texture_pressed = ExtResource("17_hnyjy")
+texture_hover = ExtResource("17_hnyjy")
+texture_disabled = ExtResource("17_hnyjy")
+texture_focused = ExtResource("17_hnyjy")
+
+[node name="switch" type="TextureButton" parent="menu"]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 211.0
+offset_right = 608.0
+offset_bottom = 274.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(31, 31)
+texture_normal = ExtResource("16_p0xr0")
+texture_pressed = ExtResource("16_p0xr0")
+texture_hover = ExtResource("16_p0xr0")
+texture_disabled = ExtResource("16_p0xr0")
+texture_focused = ExtResource("16_p0xr0")
+
+[node name="Animation_menu" type="AnimationPlayer" parent="menu"]
+libraries = {
+"": SubResource("AnimationLibrary_qq203")
+}
+
+[node name="menu_Audio" type="AudioStreamPlayer" parent="menu"]
+
+[node name="click_menu" type="Area2D" parent="menu" node_paths=PackedStringArray("Dialogic_data", "Animation_menu", "animationPlayer", "dialogic_")]
+position = Vector2(575, 336)
+scale = Vector2(4.74619, 4.58619)
+collision_layer = 512
+collision_mask = 512
+script = ExtResource("20_cqrta")
+Dialogic_data = NodePath("../../Dialogic_data")
+Animation_menu = NodePath("../Animation_menu")
+animationPlayer = NodePath("../../AnimationPlayer")
+dialogic_ = NodePath("../../Dialogic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="menu/click_menu"]
+shape = SubResource("CapsuleShape2D_3fxxc")
+
+[node name="menu_range" type="Area2D" parent="menu"]
+position = Vector2(575, 329)
+scale = Vector2(12.2347, 11.402)
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="menu/menu_range"]
+scale = Vector2(1.35268, 1.35268)
+shape = SubResource("RectangleShape2D_u8a3i")
+
+[node name="trig" type="Area2D" parent="."]
+scale = Vector2(0.79606, 0.79606)
+collision_layer = 512
+collision_mask = 512
+script = ExtResource("20_qcski")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trig"]
+scale = Vector2(0.589931, 0.589931)
+shape = SubResource("CircleShape2D_wgdl2")
+
 [connection signal="focus_entered" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_entered"]
 [connection signal="focus_exited" from="TextureRect" to="mouse_move" method="_on_texture_rect_focus_exited"]
+[connection signal="area_entered" from="menu/click_menu" to="menu/click_menu" method="_on_area_entered"]
+[connection signal="area_exited" from="menu/click_menu" to="menu/click_menu" method="_on_area_exited"]
+[connection signal="area_exited" from="menu/menu_range" to="menu/click_menu" method="_on_menu_range_area_exited"]

@@ -1,7 +1,7 @@
 [signal arg="Speak"]
 Sayori_Mini: 我写了一首诗，你想听听吗？ #id:2c
 - 想听 #id:2d
-	[music path="res://Assets/Audios/BGM/5_sayori.ogg" fade="4.0" volume="0.0"]
+	[music path="res://Assets/Audios/BGM/5_sayori.ogg" fade="0.0" volume="0.0"]
 	Sayori_Mini: 我看着你，\
 屏幕上闪烁着，你微微的笑。 #id:2e
 	Sayori_Mini: 那是一道光，\

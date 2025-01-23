@@ -1,0 +1,24 @@
+keys,zh_CN,en
+Text/dc/text,嗯...我，我写了首诗，你想不想看一下...?,Hmm... I... I wrote a poem. Would you like to take a look at it?
+Choice/dd/text,想看,Yes
+Choice/dd/disabled_text,,
+Text/de/text,"黑暗的边缘，
+是你靠近的气息。","At the edge of darkness,
+Is the breath of your approach."
+Text/df/text,"寂静之中，
+心跳化作刀刃，划过天空。","In the silence,
+The heartbeat becomes a blade, slicing through the sky."
+Text/e0/text,"若靠近，
+或许可以目睹，刀下的绯红。","If you get closer,
+Perhaps you could witness the crimson beneath the blade.
+"
+Text/e1/text,不必明白，这份爱有多么深沉。,No need to understand how deep this love runs.
+Text/e2/text,"也许它本就无法到达终点，
+但在这短暂的瞬间，
+我早已迷失...","Maybe it was never meant to reach its end,
+But in this fleeting moment,
+I have already lost..."
+Text/e3/text,无可救药！！,Irrevocably lost!!
+Choice/e4/text,没时间,no time
+Choice/e4/disabled_text,,
+Text/e5/text,噢..好的,Oh... sure.

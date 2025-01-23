@@ -17,6 +17,7 @@ public partial class Sayori_Texture : TextureRect
 
 	void _on_focus_entered()
 	{
+		GD.Print("focus entered");
 		GetNode<AutoLoad_Data>("/root/AutoLoadData").desktopCharacter = "Sayori";//设置当前桌面角色为Sayori
 		GetNode<AutoLoad_Data>("/root/AutoLoadData").save_player_data();//保存玩家数据
 

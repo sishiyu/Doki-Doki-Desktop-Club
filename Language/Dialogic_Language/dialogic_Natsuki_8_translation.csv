@@ -1,0 +1,16 @@
+keys,zh_CN,en
+Text/c5/text,我刚刚写了一首诗，要看吗？(〃_〃),I just wrote a poem. Do you want to see it? (〃_〃)
+Choice/c6/text,想看,Yes
+Choice/c6/disabled_text,,
+Text/c7/text,小兔把胡萝卜分给大家，招来了小狗。,"The little rabbit shared carrots with everyone,
+And that summoned the little dog."
+Text/c8/text,跟小狗在一起很快乐，这是为什么？,"It’s so much fun to be with the dog, but why is that?"
+Text/c9/text,小兔和小猫吵架，小狗帮了小兔。,"The rabbit and the cat had a quarrel,
+And the dog helped the rabbit."
+Text/ca/text,跟小狗在一起暖暖的，这是为什么？,"It’s warm and cozy to be with the dog, but why is that?"
+Text/cb/text,小兔去小狗家玩，一起嬉戏打闹。,"The rabbit went to the dog’s house to play,
+Laughing and playing around together."
+Text/cc/text,为什么？不用再问了吧，已经很明显了。,"Why? No need to ask anymore,It’s already quite clear."
+Choice/cd/text,没时间,No Time
+Choice/cd/disabled_text,,
+Text/ce/text,...随便你,...Whatever.

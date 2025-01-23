@@ -9,7 +9,8 @@ public partial class AutoLoad_Data : Node
     [Export]public String language = "zh_CN";//语言
     [Export]public int Dialogue_progress_Sayori = 1;//Sayori日常对话进度
     [Export]public int Dialogue_progress_Monika = 1;//Monika日常对话进度
-
+    [Export]public int Dialogue_progress_Natsuki = 1;//Natsuki日常对话进度
+    [Export]public int Dialogue_progress_Yuri = 1;//Yuri日常对话进度
 
     Player_Data player_data;//玩家数据文件
 
@@ -27,6 +28,8 @@ public partial class AutoLoad_Data : Node
                       language = player_Data_file.language;//获取语言
                       Dialogue_progress_Sayori = player_Data_file.Dialogue_progress_Sayori;//获取Sayori日常对话进度
                       Dialogue_progress_Monika = player_Data_file.Dialogue_progress_Monika;//获取Monika日常对话进度
+                      Dialogue_progress_Natsuki = player_Data_file.Dialogue_progress_Natsuki;//获取Natsuki日常对话进度
+                      Dialogue_progress_Yuri = player_Data_file.Dialogue_progress_Yuri;//获取Yuri日常对话进度
 
                       
                       TranslationServer.SetLocale(language);//设置语言
@@ -56,6 +59,8 @@ public partial class AutoLoad_Data : Node
         player_Data_file.language = language;//保存语言
         player_Data_file.Dialogue_progress_Sayori = Dialogue_progress_Sayori;//保存Sayori日常对话进度
         player_Data_file.Dialogue_progress_Monika = Dialogue_progress_Monika;//保存Monika日常对话进度
+        player_Data_file.Dialogue_progress_Natsuki = Dialogue_progress_Natsuki;//保存Natsuki日常对话进度
+        player_Data_file.Dialogue_progress_Yuri = Dialogue_progress_Yuri;//保存Yuri日常对话进度
         ResourceSaver.Save( player_Data_file,"user://player_data.tres");//导入玩家数据文件
     }
 }
